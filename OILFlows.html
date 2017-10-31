@@ -86,7 +86,6 @@ function writeElement(element,writeOption)
 {
 	try
 	{
-//		document.getElementById("trace").innerHTML+="In writefieldElement!<br>";
 		var txt = "";
 		if(element.hasOwnProperty("flow"))
 		{
@@ -143,7 +142,6 @@ function writeElement(element,writeOption)
 				txt+="<td></td>";
 			}
 			txt+="<td><button class=\"flowbutton\" id=\""+element.flow+"\" name=\""+element.flow+"\" onclick=\"myFunction(id)\">Edit</button></td>";
-//			<td>tata</td>
 		}
 		else
 		{
@@ -160,15 +158,10 @@ function writeElement(element,writeOption)
 
 function writeOilFlow(flowName)
 {
-//		document.getElementById("trace").innerHTML+="Tata was here!<br>";
-//		document.getElementById("trace").innerHTML+="Tata was here! -  after def read<br>";
-	//	alert("flowname: "+flowName);
-	//	var txt = "";
 		var txt = "";		
 		txt=txt+"<table id=\"oilflows\"><tr><th>Flow</th><th>Consumer</th><th>Interfaces</th><th>Component</th><th>Response flow</th><th>Document References</th><th>Action</th></tr>";
 		for(var i=0; i<OilFlows.flows.length; i++)
 		{
-//			document.getElementById("trace").innerHTML+="var i = "+i+"<br>";
 			if(flowName=="")
 			{ 
 				txt+=writeElement(OilFlows.flows[i]);
@@ -186,9 +179,7 @@ function writeOilFlow(flowName)
 function NieuweKeuze()
 {
 	var selectedFlow = document.test.tata[document.test.tata.selectedIndex].value;
-//	alert("in NieuweKeuze - selectedIndex: "+ document.test.tata.selectedIndex);
 	var selectedIndex = document.test.tata.selectedIndex;
-//	alert("Nieuwe keuze "+document.test.tata.selectedIndex+" "+document.test.tata[document.test.tata.selectedIndex].value);
 	writeOilFlow(selectedFlow);
 	document.test.tata.selectedIndex = selectedIndex;
 	document.editForm.style.display="none";
@@ -198,14 +189,10 @@ function NieuweKeuze()
 
 function myFunction(id) 
 {
- //   var x = document.getElementById(id).name;
- //		alert("edit =>"+id);
- //   document.getElementById("trace").innerHTML = x;
  for(var j=0; j<OilFlows.flows.length; j++)
  {
 	 if(OilFlows.flows[j].flow==id)
 	 { 
-//		alert("found OilFlows element => "+OilFlows.flows[j].flow);
     editFlowid=j;
 		writeOilFlow(OilFlows.flows[j].flow);
 		document.test.tata.selectedIndex = j+1;
@@ -318,7 +305,7 @@ function saveFile()
     						location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
   						}
 				};
-		var jsonContent=JSON.stringify(OilFlows);
+		var jsonContent=JSON.stringify(OilFlows,null,'  ');
 		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');	
 	}
 	catch(e)
@@ -404,30 +391,22 @@ function enableButton()
 	{
 		var file = evt.target.files[0]; // FileList object
 		theNameOfTheFile = file.name;
-		//		document.getElementById("trace").innerHTML="<br>At start of readOilFlows<br>";
-		try
+			try
 		{
-//			document.getElementById("fileInfo").innerHTML="<br>File name: " +file.name+" - ";
 			var reader = new FileReader();
 			if(reader)
 			{
 				try
 				{
-//					document.getElementById("trace").innerHTML+="FileReader supported!<br>";
 					reader.onload = function()
 					{
 						var data = reader.result;
-//						document.getElementById("oilflowsfilecontent").innerHTML=data;
 						OilFlows = JSON.parse(data);
-//						document.getElementById("trace").innerHTML+="after JSON parse";
 						if(!OilFlows.hasOwnProperty("flows")) 
 						{
 						    	alert("Property 'flows' not found in definition file! Select another file.");
 						    	return false;
 						}
-//						document.getElementById("trace").innerHTML+="flows found: ";
-//						document.getElementById("trace").innerHTML+=OilFlows.flows.length;
-//						document.getElementById("trace").innerHTML+=".<br>";
 						for( var i=0; i<OilFlows.flows.length; i++)
 						{
 						    	var elem = OilFlows.flows[i];
@@ -435,7 +414,6 @@ function enableButton()
 						    	alert("Property 'flow' or 'info' element ["+i+"]");
 						    	return false;
 						}
-			//			alert("options innerHTML = "+document.getElementById("options").innerHTML);
 						document.test.tata.innerHTML="<option></option>";	
 						buildOptions=true;	
 						document.editForm.style.display="none";
@@ -451,7 +429,6 @@ function enableButton()
 				{
 					alert("catched error "+e);
 				}
-//				document.getElementById("trace").innerHTML+="after readAsText(file)<br>";
 			}
 			else
 			{
@@ -462,7 +439,6 @@ function enableButton()
 		{
 				alert("catched error "+e);
 		}
-//		document.getElementById("trace").innerHTML+="At end of readOilFlows<br>";
   }
 	document.getElementById('defFile').addEventListener('change', readOilFlows, false);	
 </script>
