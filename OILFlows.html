@@ -62,7 +62,7 @@ label {
 }
 </style>
 
-<script language="javascript">
+<script>
 
 var OilFlows;	
 var theNameOfTheFile;
@@ -353,9 +353,7 @@ function enableButton()
 <output id="trace"></output>
 <br> 
 <form name="test">
-<text>Select tracking domain: </text>
-<select name="tata" id="options" onChange="NieuweKeuze()">
-<option></option>
+Select tracking domain: <select name="tata" id="options" onChange="NieuweKeuze()">
 </select>
 </form>
 <br>
@@ -370,7 +368,7 @@ function enableButton()
 	<br>
 	<label>Component: </label><br><input type="text" name="Component" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="List here the OIL components that implement the interface ...">
 	<br>
-	<label>ResponseFlow: </label><br><textarea rows="4" style="width:100%;" name="ResponseFlow" style="width:100%; border:0px; padding-top: 8px; padding-bottom: 8px;" onchange="enableButton()"  placeholder="Describe response flow here ..."></textarea>
+	<label>ResponseFlow: </label><br><textarea rows="4" name="ResponseFlow" style="width:100%; border:0px; padding-top: 8px; padding-bottom: 8px;" onchange="enableButton()"  placeholder="Describe response flow here ..."></textarea>
 	<br>
 	<label>Documents: </label><br><input type="text" name="Documents" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="List documents on this flow ...">
 	<br>
@@ -379,8 +377,8 @@ function enableButton()
 		<tr>
 			<td style="width:40%"></td>
 			<td style="width:10%;padding-right:12px;"><button id="save" type="button" class="flowbutton" onclick="saveEdit()">Save</button></td>
-			</td><td style="width:10%;padding-left:12px;"><button id="cancel" type="button" class="flowbutton" onclick="cancelEdit()">Cancel</button></td>
-			<td style="width:40%">
+			<td style="width:10%;padding-left:12px;"><button id="cancel" type="button" class="flowbutton" onclick="cancelEdit()">Cancel</button></td>
+			<td style="width:40%"></td>
 		</tr>
 	</table>
 	<br> 

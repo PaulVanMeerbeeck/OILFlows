@@ -1,50 +1,369 @@
-{ "flows": 
-  [ {"flow":"AHS", "info":{"Consumer":"AHS applicaton","Interfaces":"HC6150, HC6151, HC6152, HC6154", "Component":"OILAHS", "ResponseFlow":"OMS to OILNOTIF", "Documents":"OIL FD-NWS (061280008)<br>OIL Analysis - NWS - Technical Design (062050064)"}},
-    {"flow":"BEA", "info": {"Consumer":"BEA application","Interfaces":"HC6030", "Component":"OILBEA", "ResponseFlow":"OMS -> OILNOTIF -> OILBEA_DISP<br>OILBEA_DISP updates the BEA DB via a stored proc.", "Documents":"OIL TD - OILBEA (092050006)<br>OIL Analysis - VAS-bundles-ADSL.doc (023640015)"}},
-    {"flow":"BME", "info": {"Consumer":"BME application?<br>MOP - Portout","Interfaces":"HC6091", "Component":"OILVOIP", "ResponseFlow":"OMS -> OILORDERNOTIF (HC6087) -> ESB", "Documents":"OIL TD - OILBEA (092050006)<br>OIL Analysis - VAS-bundles-ADSL.doc (023640015)"}},
-    {"flow":"BMT", "info": {"Consumer":"OMS Operations","Interfaces":"HC6047", "Component":"OILRI (reinject)", "ResponseFlow":"that of the re-injected channel", "Documents":"OIL TD - OILREINJECT (090070017)"}},
-    {"flow":"BPM", "info": {"Consumer":"BPM","Interfaces":"HC6097", "Component":"OILVOIP", "ResponseFlow":"In this flow OMS is the consumer. It sends a notification of type 'Request BPM Delivery and handle BPM Response_ReqDel' that is send to ESB. BPM responds via HC6097.", "Documents":"OIL FD - Dispatch to BPM (070750039)<br>OIL TD - OILBPM_DISP (070930041)"}},
-    {"flow":"BST", "info": {"Consumer":"BST?","Interfaces":"File in /oilp/oil/var/OILBST", "Component":"OILBST", "ResponseFlow":"OMS->OILORDERNOTIF (HC6087) -> ESB", "Documents":"OIL Analysis - OILBST (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082910011\">082910011</a>)"}},
-    {"flow":"CDBCBP", "info": {"Consumer":"tbd"}},
-    {"flow":"CDBICC", "info": {"Consumer":"tbd"}},
-    {"flow":"CDBMC", "info": {"Consumer":"tbd"}},
-    {"flow":"CNPN", "info": {"Consumer":"tbd"}},
-    {"flow":"COB", "info": {"Consumer":"tbd"}},
-    {"flow":"CPS", "info": {"Consumer":"tbd"}},
-    {"flow":"ECA", "info": {"Consumer":"tbd"}},
-    {"flow":"EmailSending", "info": {"Consumer":"tbd"}},
-    {"flow":"HandleBadPayer", "info": {"Consumer":"tbd"}},
-    {"flow":"HandleOrder", "info": {"Consumer":"tbd"}},
-    {"flow":"IMA", "info": {"Consumer":"tbd","Interfaces":"HC6083", "Component":"OILIMA<br>updates IMA_BUFFER", "ResponseFlow":"none<br>OILIMA_DAEMON creates flat file from IMA_BUFFER", "Documents":"OIL Analysis - Voice over IP (052620045)<br>out-of-date"}},
-    {"flow":"LOA", "info": {"Consumer":"tbd"}},
-    {"flow":"MOP", "info": {"Consumer":"tbd"}},
-    {"flow":"MTC", "info": {"Consumer":"tbd"}},
-    {"flow":"MTMK", "info": {"Consumer":"tbd"}},
-    {"flow":"MTS", "info": {"Consumer":"tbd"}},
-    {"flow":"MainProcess", "info": {"Consumer":"tbd"}},
-    {"flow":"NPE", "info": {"Consumer":"tbd"}},
-    {"flow":"NPI", "info": {"Consumer":"tbd"}},
-    {"flow":"NPS", "info": {"Consumer":"tbd"}},
-    {"flow":"OHE", "info": {"Consumer":"tbd"}},
-    {"flow":"OMS", "info": {"Consumer":"tbd"}},
-    {"flow":"OrderCompletion", "info": {"Consumer":"tbd"}},
-    {"flow":"OrderFulfilment", "info": {"Consumer":"tbd"}},
-    {"flow":"POM", "info": {"Consumer":"tbd"}},
-    {"flow":"PPC", "info": {"Consumer":"tbd"}},
-    {"flow":"RHE", "info": {"Consumer":"tbd"}},
-    {"flow":"ROSY", "info": {"Consumer":"tbd"}},
-    {"flow":"Retry2646", "info": {"Consumer":"tbd"}},
-    {"flow":"RosyAsynch", "info": {"Consumer":"tbd"}},
-    {"flow":"RosyReportStatus", "info": {"Consumer":"tbd"}},
-    {"flow":"RosyRetry", "info": {"Consumer":"tbd"}},
-    {"flow":"SEAP", "info": {"Consumer":"tbd"}},
-    {"flow":"SHE", "info": {"Consumer":"tbd"}},
-    {"flow":"2651Process", "info": {"Consumer":"tbd"}},
-    {"flow":"CDBDIMS", "info": {"Consumer":"tbd"}},
-    {"flow":"CEASE", "info": {"Consumer":"tbd"}},
-    {"flow":"IVR", "info": {"Consumer":"tbd"}},
-    {"flow":"OLO", "info": {"Consumer":"tbd"}}
+{
+  "flows": [
+    {
+      "flow": "AHS",
+      "info": {
+        "Consumer": "AHS applicaton",
+        "Interfaces": "HC6150, HC6151, HC6152, HC6154",
+        "Component": "OILAHS",
+        "ResponseFlow": "OMS to OILNOTIF",
+        "Documents": "OIL FD-NWS (061280008)<br>OIL Analysis - NWS - Technical Design (062050064)"
+      }
+    },
+    {
+      "flow": "BEA",
+      "info": {
+        "Consumer": "BEA application",
+        "Interfaces": "HC6030",
+        "Component": "OILBEA",
+        "ResponseFlow": "OMS->OILNOTIF->OILBEA_DISP<br>OILBEA_DISP updates the BEA DB via a stored proc.",
+        "Documents": "OIL TD - OILBEA (092050006)<br>OIL Analysis - VAS-bundles-ADSL.doc (023640015)"
+      }
+    },
+    {
+      "flow": "BME",
+      "info": {
+        "Consumer": "BME application?<br>MOP - Portout",
+        "Interfaces": "HC6091",
+        "Component": "OILVOIP",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB",
+        "Documents": "No relevant doc in panagon."
+      }
+    },
+    {
+      "flow": "BMT",
+      "info": {
+        "Consumer": "OMS Operations",
+        "Interfaces": "HC6047",
+        "Component": "OILRI (reinject)",
+        "ResponseFlow": "that of the re-injected channel",
+        "Documents": "OIL TD - OILREINJECT (090070017)"
+      }
+    },
+    {
+      "flow": "BPM",
+      "info": {
+        "Consumer": "BPM",
+        "Interfaces": "HC6097",
+        "Component": "OILVOIP",
+        "ResponseFlow": "In this flow OMS is the consumer. It sends a notification of type 'Request BPM Delivery and handle BPM Response_ReqDel' that is send to ESB. BPM responds via HC6097.",
+        "Documents": "OIL FD - Dispatch to BPM (070750039)<br>OIL TD - OILBPM_DISP (070930041)"
+      }
+    },
+    {
+      "flow": "BST",
+      "info": {
+        "Consumer": "BST?",
+        "Interfaces": "File in /oilp/oil/var/OILBST",
+        "Component": "OILBST",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB",
+        "Documents": "OIL Analysis - OILBST (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082910011\">082910011</a>)"
+      }
+    },
+    {
+      "flow": "CDBCBP",
+      "info": {
+        "Consumer": "CDB applicaton",
+        "Interfaces": "File in /oilp/oil/var/OILCDBCBP/input",
+        "Component": "OILCDBCBP<br>exposing BatchCDBCBP_DMN",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6025)->ESB (CTG)",
+        "Documents": "OIL Analysis - CDB Change Billing & Pricing (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810010\">022810010</a>)<br>OIL FD - CDB Change Billing & Pricing (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=050560030\">050560030</a>)"
+      }
+    },
+    {
+      "flow": "CDBDIMS",
+      "info": {
+        "Consumer": "tbd",
+        "Interfaces": "File in /oilp/oil/var/OILCDBDIMS/input",
+        "Component": "OILCDBDIMS<br>exposing BatchCDBDIMS",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6044) ->BIP Cached",
+        "Documents": ""
+      }
+    },
+    {
+      "flow": "CDBICC",
+      "info": {
+        "Consumer": "CDB",
+        "Interfaces": "File in /oilp/oil/var/OILCDBICC/input",
+        "Component": "OILCDBICC<br>exposing BatchCDBICC",
+        "Documents": "OIL Analysis - CDB Internal Credit Check (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810012\">022810012</a>)"
+      }
+    },
+    {
+      "flow": "CDBMC",
+      "info": {
+        "Consumer": "CDB",
+        "Interfaces": "File in /oilp/oil/var/OILCDBMC/input",
+        "Component": "OILCDBMC<br>exposing BatchCDBMC",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087) -> ESB<br>OMS->OILNOTIF (HC6025) -> ESB (CTG)<br>OMS->OILNOTIF (HC6037) -> DMS<br>OMS->OILNOTIF (HC6038) -> TTS",
+        "Documents": "OIL Analysis - CDB Merge Customer (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810013\">022810013</a>)"
+      }
+    },
+    {
+      "flow": "CNPN",
+      "info": {
+        "Consumer": "CNP",
+        "Interfaces": "HC6019",
+        "Component": "OILCNPN - phased out in CRC09 2015<br>Replaced by I124038 - FNP Migration Phase 1",
+        "ResponseFlow": "OILCNPN_DISP - phased out in CRC09 2015",
+        "Documents": "OIL Analysis - CNP Notification Framework (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031290053\">031290053</a>)<br>(See <a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3</a>)"
+      }
+    },
+    {
+      "flow": "CNPD",
+      "info": {
+        "Consumer": "CNP",
+        "Interfaces": "HC6031",
+        "Component": "OILCNPD - phased out in CRC09 2015<br>Replaced by I124038 - FNP Migration Phase 1",
+        "ResponseFlow": "OILCNPD_DISP - phased out in CRC09 2015",
+        "Documents": "OIL Analysis - CNP donor (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810014\">022810014</a>)<br>(See <a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3</a>)"
+      }
+    },
+    {
+      "flow": "CNPR",
+      "info": {
+        "Consumer": "CNP",
+        "Interfaces": "HC6032",
+        "Component": "OILCNPR - phased out in CRC09 2015<br>Replaced by I124038 - FNP Migration Phase 1",
+        "ResponseFlow": "OILCNPR_DISP - phased out in CRC09 2015",
+        "Documents": "OIL Analysis - CNP recipient (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810015\">022810015</a>)<br>(See <a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3</a>)"
+      }
+    },
+    {
+      "flow": "COB",
+      "info": {
+        "Consumer": "COB application?",
+        "Interfaces": "HC6091<br>File in /oilp/oil/var/OILCOB",
+        "Component": "OILVOIP<br>OILCOB",
+        "ResponseFlow": "OMS->OILNOTIF->OILCOB_DISP (sends email to COB Hotline)",
+        "Documents": "<br>OIL Analysis - COB (<a  target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810016\\\">022810016</a>)"
+      }
+    },
+    {
+      "flow": "CPS",
+      "info": {
+        "Consumer": "CPS Application?",
+        "Interfaces": "HC6033",
+        "Component": "OILCPS",
+        "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILCSP_DISP<br>OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6037)->DMS<br>OMS->OILNOTIF (HC6025)->OILBPM_DISP->OFA(RequestDataSynchronizeVoipConfiguration)",
+        "Documents": "OIL Analysis - CPS (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810018\\\">022810018</a>)"
+      }
+    },
+    {
+      "flow": "ECA",
+      "info": {
+        "Consumer": "ECA Application",
+        "Interfaces": "HC6155 (OLO)<br>HC6091 (ECA)",
+        "Component": "OILECA<br>OILVOIP",
+        "ResponseFlow": "Tracking domain OLO: OMS->OILNOTIF->OILNWS_DISP->OLO<br>Tracking domain ECA: OMS->OILNOTIF->OILBPM_DISP->BPM (OMG)<br>OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6037)->DMS",
+        "Documents": "Tracking domain OLO: OIL Analysis - OILECA (<a  target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=112490002\\\">112490002</a>)<br><br><br><br>"
+      }
+    },
+    {
+      "flow": "EmailSending",
+      "info": {
+        "Consumer": "tbd",
+        "Interfaces": "",
+        "Component": "",
+        "ResponseFlow": "",
+        "Documents": ""
+      }
+    },
+    {
+      "flow": "HandleBadPayer",
+      "info": {
+        "Consumer": "tbd",
+        "Interfaces": "",
+        "Component": "",
+        "ResponseFlow": "",
+        "Documents": ""
+      }
+    },
+    {
+      "flow": "HandleOrder",
+      "info": {
+        "Consumer": "tbd",
+        "Interfaces": "",
+        "Component": "",
+        "ResponseFlow": "",
+        "Documents": ""
+      }
+    },
+    {
+      "flow": "IMA",
+      "info": {
+        "Consumer": "tbd",
+        "Interfaces": "HC6083",
+        "Component": "OILIMA<br>updates IMA_BUFFER",
+        "ResponseFlow": "none<br>OILIMA_DAEMON creates flat file from IMA_BUFFER",
+        "Documents": "OIL Analysis - Voice over IP (052620045)<br>out-of-date"
+      }
+    },
+    {
+      "flow": "LOA",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "MOP",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "MTC",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "MTMK",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "MTS",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "MainProcess",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "NPE",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "NPI",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "NPS",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "OHE",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "OMS",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "OrderCompletion",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "OrderFulfilment",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "POM",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "PPC",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "RHE",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "ROSY",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "Retry2646",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "RosyAsynch",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "RosyReportStatus",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "RosyRetry",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "SEAP",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "SHE",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "2651Process",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "CEASE",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "IVR",
+      "info": {
+        "Consumer": "tbd"
+      }
+    },
+    {
+      "flow": "OLO",
+      "info": {
+        "Consumer": "tbd"
+      }
+    }
   ],
- "obsolete": {"doc":"OIL FD - Voice over IP (052370034)", "component":""}
-
+  "obsolete": {
+    "doc": "OIL FD - Voice over IP (052370034)",
+    "component": ""
+  }
 }
