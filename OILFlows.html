@@ -3,12 +3,41 @@
 <head>
 <link rel="stylesheet" href="/w3css/4/w3.css">
 <style>
-body		{margin: 0 1 0 0; border-style: solid;border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px; border-color:#29A2DB;}
-textarea	{font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: black; font-weight: normal; background-color: #ffffff; border-style: solid; border-color:#29A2DB; border-bottom-width: 0px; border-left-width: 0px; border-right-width: 0px; border-top-width: 0px; }
-h1   {color:#fff; background-color:#0099db; padding: 50px;}
-p    {color:black;}
+body		{
+	margin: 0 1 0 0; 
+	border-style: solid;
+	border-bottom-width: 0px; 
+	border-left-width: 0px; 
+	border-right-width: 0px; 
+	border-top-width: 0px; 
+	border-color:#29A2DB;
+	}
 
-#oilflows, .flowbutton, text{
+textarea	{
+	font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	color: black; 
+	font-weight: normal; 
+	background-color: #ffffff; 
+	border-style: solid; 
+	border-color:#29A2DB; 
+	border-bottom-width: 0px; 
+	border-left-width: 0px; 
+	border-right-width: 0px; 
+	border-top-width: 0px;
+	}
+
+h1   {
+	color:#fff; 
+	background-color:#0099db; 
+	padding: 50px;
+	}
+
+p    {
+	color:black;
+	}
+
+#oilflows, .flowbutton, text {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
 		font-size: 12px;
@@ -20,9 +49,9 @@ p    {color:black;}
     padding: 8px;
 }
 
-#oilflows tr:nth-child(even){background-color: #f2f2f2;}
+#oilflows tr:nth-child(even) { background-color: #f2f2f2; }
 
-#oilflows tr:hover {background-color: #ddd;}
+#oilflows tr:hover { background-color: #ddd; }
 
 #oilflows th {
     padding-top: 12px;
@@ -39,11 +68,13 @@ p    {color:black;}
     background-color: #0099db;
     color: white;
 }
-#save{
+
+#save {
 	width:20;
 	align-content: left;
 }
-#cancel{
+
+#cancel {
 	width:20;
 	align-content: center;
 }
@@ -57,6 +88,7 @@ p    {color:black;}
 #editFormHeader {
 	background-color: #0099db;
 }
+
 label {
 	color:#0099db;	
 }
@@ -80,7 +112,7 @@ function getData()
 	{
 		alert("getData - foutje "+e);
 	}
-}
+};
 
 function writeElement(element,writeOption)
 {
@@ -306,7 +338,8 @@ function saveFile()
   						}
 				};
 		var jsonContent=JSON.stringify(OilFlows,null,'  ');
-		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');	
+		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');
+		document.getElementById("saveFile").style.display="none";	
 	}
 	catch(e)
 	{
@@ -370,7 +403,7 @@ Select tracking domain: <select name="tata" id="options" onChange="NieuweKeuze()
 	<br>
 	<label>ResponseFlow: </label><br><textarea rows="4" name="ResponseFlow" style="width:100%; border:0px; padding-top: 8px; padding-bottom: 8px;" onchange="enableButton()"  placeholder="Describe response flow here ..."></textarea>
 	<br>
-	<label>Documents: </label><br><input type="text" name="Documents" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="List documents on this flow ...">
+	<label>Documents: </label><br><textarea rows="4" name="Documents" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="List documents on this flow ..."></textarea>
 	<br>
 	<br>
 	<table style="width:100%">

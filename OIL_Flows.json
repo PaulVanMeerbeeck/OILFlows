@@ -162,37 +162,37 @@
     {
       "flow": "EmailSending",
       "info": {
-        "Consumer": "tbd",
-        "Interfaces": "",
-        "Component": "",
-        "ResponseFlow": "",
-        "Documents": ""
+        "Consumer": "IDTV (BPM)",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "HandleBadPayer",
       "info": {
-        "Consumer": "tbd",
-        "Interfaces": "",
-        "Component": "",
-        "ResponseFlow": "",
-        "Documents": ""
+        "Consumer": "IDTV (BPM)",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "HandleOrder",
       "info": {
-        "Consumer": "tbd",
-        "Interfaces": "",
-        "Component": "",
-        "ResponseFlow": "",
-        "Documents": ""
+        "Consumer": "IDTV (BPM)",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "IMA",
       "info": {
-        "Consumer": "tbd",
+        "Consumer": "IMA ?",
         "Interfaces": "HC6083",
         "Component": "OILIMA<br>updates IMA_BUFFER",
         "ResponseFlow": "none<br>OILIMA_DAEMON creates flat file from IMA_BUFFER",
@@ -202,37 +202,61 @@
     {
       "flow": "LOA",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IVR and INN",
+        "Interfaces": "ResumeLOA",
+        "Component": "OILPOM",
+        "ResponseFlow": "None. This call is just to update the order in OMS.<br>Note that ResumeLOA is called by the consumer via AI that calls ESB that calls the OIL service via a HUBInvoker.",
+        "Documents": "OILPOM Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=151750001\">151750001</a>)"
       }
     },
     {
       "flow": "MOP",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "MOP (BPM)",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "MTC",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "tbd",
+        "Interfaces": "Files in ${FTPHOME}/OILBATCH/input",
+        "Component": "OILBATCH",
+        "ResponseFlow": "Depends on the tracking domain mentioned in the input message. (Currently ECH or MCOM.)",
+        "Documents": "OIL Analysis - MTC (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810020\">022810020</a>)"
       }
     },
     {
       "flow": "MTMK",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "tbd",
+        "Interfaces": "HC6159",
+        "Component": "OILPOM",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6025)->OILSOA_DISP->MTMK (bgc.services.mtmk.orderingfeedback.v1)",
+        "Documents": "OILPOM Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=151750001\">151750001</a>)<br>OIL Analysis - OILMTMK_DISP (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=121800002\">121800002</a>)"
       }
     },
     {
       "flow": "MTS",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "OLO's",
+        "Interfaces": "File in $FTPHOME/OILNWS/INPUT/NWS_i<br>See use of OIL DB NWS tables.",
+        "Component": "OILNWS",
+        "ResponseFlow": "OMS->OILORDERNTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6025)->OILNWS_DISP->OLO",
+        "Documents": "OIL FD - NWS (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=061280008\">061280008</a>)<br>OIL Analysis - NWS - Technical Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=062050064\">062050064</a>)<br>OIL Analysis - NWS Mail Bouncing - Technical Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=063310002\">063310002</a>)<br>and several project related documents"
       }
     },
     {
       "flow": "MainProcess",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV (BPM)",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
@@ -352,7 +376,11 @@
     {
       "flow": "IVR",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "FMC ? (BPM)",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB"
       }
     },
     {
