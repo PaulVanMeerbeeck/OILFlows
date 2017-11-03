@@ -266,9 +266,9 @@ function saveEdit()
 	OilFlows.flows[editFlowid].info.Documents=document.editForm.Documents.value;
  	writeOilFlow(OilFlows.flows[editFlowid].flow);
 	document.selectTrackingDomain.keuze.selectedIndex = editFlowid+1;
-	document.getElementById("saveFile").style.display="block";
-	document.getElementById("saveFile").style.backgroundColor="#0099db";
-	document.getElementById("saveFile").disabled=false;
+	document.getElementById("saveFileBttn").style.display="block";
+	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
+	document.getElementById("saveFileBttn").disabled=false;
 	return true;
 }
 
@@ -310,8 +310,8 @@ function saveFile()
 				};
 		var jsonContent=JSON.stringify(OilFlows,null,'  ');
 		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');
-		document.getElementById("saveFile").disabled=true;
-		document.getElementById("saveFile").style.backgroundColor="lightgrey";
+		document.getElementById("saveFileBttn").disabled=true;
+		document.getElementById("saveFileBttn").style.backgroundColor="lightgrey";
 	}
 	catch(e)
 	{

@@ -10,17 +10,15 @@
 </head>
 <body onload="getData()">
 	 <h1 align="center">Oil Flows Summary</h1>
+<form name="selectTrackingDomain">
 <table style="width:100%">
 	<tr>
-		<td>Select flows definition file: <input type="file" id="defFile" accept=".json" style="width:60%"></td>
+<!-- 	<td><text>Select flows definition file: </text><input type="file" id="defFile" accept=".json" size="80"></td>  -->	
+		<td style="width:60%">Select tracking domain: <select name="keuze" id="options" onChange="NieuweKeuze()"></select></td>
 		<td style="width:20%"></td>
-		<td style="width:20%"><button id="saveFile" name="saveFile" type="button" class="flowbutton" style="display:none;" onclick="saveFile()">Save file update</button></td>
+		<td style="width:20%"><button id="saveFileBttn" name="saveFileBttn" type="button" class="flowbutton" style="display:none;" onclick="saveFile()">Save file update</button></td>
 	</tr>
 </table>
-<output id="trace"></output>
-<br> 
-<form name="selectTrackingDomain">
-Select tracking domain: <select name="keuze" id="options" onChange="NieuweKeuze()"></select>
 </form>
 <br>
 <output id="list" ></output>
@@ -48,8 +46,12 @@ Select tracking domain: <select name="keuze" id="options" onChange="NieuweKeuze(
 	</table>
 	<br> 
 </form>
+<output id="trace"></output>
 <script>
-document.getElementById('defFile').addEventListener('change', readOilFlows, false);
+/* This is disbaled as input button of type file is replaced by include of json object
+ * defined in OILFlowsData.js - see element with id defFile above
+ */
+//document.getElementById('defFile').addEventListener('change', readOilFlows, false);
 </script>
 </body>
 </html>
