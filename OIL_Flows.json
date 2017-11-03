@@ -64,7 +64,7 @@
       "flow": "CDBCBP",
       "info": {
         "Consumer": "CDB applicaton",
-        "Interfaces": "File in /oilp/oil/var/OILCDBCBP/input",
+        "Interfaces": "File in /oilp/oil/var/OILCDBCBP",
         "Component": "OILCDBCBP<br>exposing BatchCDBCBP_DMN",
         "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6025)->ESB (CTG)",
         "Documents": "OIL Analysis - CDB Change Billing & Pricing (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810010\">022810010</a>)<br>OIL FD - CDB Change Billing & Pricing (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=050560030\">050560030</a>)"
@@ -106,7 +106,7 @@
         "Interfaces": "HC6019",
         "Component": "OILCNPN - phased out in CRC09 2015<br>Replaced by I124038 - FNP Migration Phase 1",
         "ResponseFlow": "OILCNPN_DISP - phased out in CRC09 2015",
-        "Documents": "OIL Analysis - CNP Notification Framework (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031290053\">031290053</a>)<br>(See <a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3</a>)"
+        "Documents": "OIL Analysis - CNP Notification Framework (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031290053\">031290053</a>)<br>(See <a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3</a>)<br>IM5905223 OIL - Phase out of FNP components (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=151420002\">151420002</a>)"
       }
     },
     {
@@ -262,31 +262,51 @@
     {
       "flow": "NPE",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "XNP",
+        "Interfaces": "NPEXPORTORDER<br>Via OilGateway (ESB) and ESB_DAEMON.<br>OIL is producer of bgc.services.oil.npexportorder.v1",
+        "Component": "OILXNP",
+        "ResponseFlow": "OMS->OILNOTIF(HC6044->OILXNP_DISP->ESB<br>OIL sends ResponseData of bgc.services.oil.npexportorder.v1",
+        "Documents": "I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3 (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">153580016</a>)<br>I124038 - Preliminary OIL Design Notes_V2 (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580014\">153580014</a>)<br>ESB_DAEMON_Design_Approach (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580015\">153580015</a>)<br>ESB_DAEMON Analysis and Design document ((<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580017\">153580017</a>)"
       }
     },
     {
       "flow": "NPI",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "OMS",
+        "Interfaces": "HC6034",
+        "Component": "OILNOTIF->OILXNP_DISP->ESB<br>OIL consumer of bgc.services.xnp.ordernpimportnb.v1<br><br>",
+        "ResponseFlow": "XNP sends ResponseData via ESB (OilGwateway),<br>ESB_Daemon to read OilGateway queue<br>and calls tuxedo service NPIMPORTORDER exposed by OILXNP. ",
+        "Documents": "I124038 - FNP Migration Phase 1 - OIL Analysis  Design - Ver 1.3 (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580016\">153580016</a>)<br>I124038 - Preliminary OIL Design Notes_V2 (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580014\">153580014</a>)<br>ESB_DAEMON_Design_Approach (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580015\">153580015</a>)<br>ESB_DAEMON Analysis and Design document ((<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580017\">153580017</a>)"
       }
     },
     {
       "flow": "NPS",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "NPS",
+        "Interfaces": "HC6053",
+        "Component": "OILNPS",
+        "ResponseFlow": "None.",
+        "Documents": "OIL Analysis - NPS-OMS Interface (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=030840108\">030840108</a>)"
       }
     },
     {
       "flow": "OHE",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "SHE",
+        "Interfaces": "HC6103",
+        "Component": "OILVOIP",
+        "ResponseFlow": "OMS->OILORDERNOTIF(HC6087)->ESB<br>OMS->OILNOTIF (HC6028)->OILTTS_DISP->TTS<br>OMS->OILNOTIF (HC6028)->OILBAEC_DISP->BEA DB",
+        "Documents": "No relevant doc in panagon."
       }
     },
     {
       "flow": "OMS",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "OMS",
+        "Interfaces": "HC6087",
+        "Component": "OILORDERNOTIF",
+        "ResponseFlow": "This is part of OMS 's response flow as a result of orders sent to OMS ",
+        "Documents": "P121033 - One selling CS2 Phase 2 - OIL Analysis & Design_V1.0 (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580091\">153580091</a>)<br>OIL TD - OILBPM_DISP (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070930041\">070930041</a>)"
       }
     },
     {
@@ -358,7 +378,11 @@
     {
       "flow": "SHE",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "SHE",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "",
+        "Documents": ""
       }
     },
     {
@@ -386,7 +410,11 @@
     {
       "flow": "OLO",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "NPA, Rosy (via AI)",
+        "Interfaces": "HC6158",
+        "Component": "OILPOM. Sends order to OMS and NGCOUT15 to OLO.",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB",
+        "Documents": "OILPOM Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=151750001\">151750001</a>)"
       }
     }
   ],

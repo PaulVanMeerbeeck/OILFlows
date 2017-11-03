@@ -1,0 +1,79 @@
+@CHARSET "ISO-8859-1";
+
+body {
+	margin: 0 1 0 0; 
+	border-style: solid;
+	border-bottom-width: 0px; 
+	border-left-width: 0px; 
+	border-right-width: 0px; 
+	border-top-width: 0px; 
+	border-color:#29A2DB;
+}
+
+h1   {
+	color:#fff; 
+	background-color:#0099db; 
+	padding: 50px;
+}
+
+p    {
+	color:black;
+}
+
+#oilflows, .flowbutton, text {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+	font-size: 12px;
+    width: 100%;
+}
+
+#oilflows td, #oilflows th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+	
+#oilflows tr:nth-child(even) { background-color: #f2f2f2; }
+
+#oilflows tr:hover { background-color: #ddd; }
+
+#oilflows th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0099db;
+    color: white;
+}
+
+.flowbutton {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-align: center;
+    background-color: #0099db;
+    color: white;
+}
+
+#save {
+	width:20;
+	align-content: left;
+}
+
+#cancel {
+	width:20;
+	align-content: center;
+}
+
+#flowEdit {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	background-color: #ddd;
+	color:white;
+	display:none;	
+}
+
+#editFormHeader {
+	background-color: #0099db;
+}
+
+label {
+	color:#0099db;	
+}
+	
