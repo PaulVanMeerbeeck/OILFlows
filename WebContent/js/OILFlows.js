@@ -23,7 +23,7 @@ function getData()
 			    	return false;
 			}
 		}
-		document.selectTrackingDomain.keuze.innerHTML="<option></option>";	
+		addOption("");	
 		buildOptions=true;	
 		document.editForm.style.display="none";
 		writeOilFlow("");
@@ -35,94 +35,83 @@ function getData()
 	}
 }
 
-function writeElement(element)
+function writeElement(table,element)
 {
 	try
 	{
-		var txt = "";
+		var row = table.insertRow();
+		var cell0 = row.insertCell(0);
+		var cell1 = row.insertCell(1);
+		var cell2 = row.insertCell(2);
+		var cell3 = row.insertCell(3);
+		var cell4 = row.insertCell(4);
+		var cell5 = row.insertCell(5);
+		var cell6 = row.insertCell(6);
+		
 		if(element.hasOwnProperty("flow"))
 		{
-			txt+="<td>"+element.flow+"</td>";
+			cell0.innerHTML=element.flow;
 			if(buildOptions)
 			{
-				document.getElementById("options").innerHTML+="<option>"+element.flow+"</option>";
+				addOption(element.flow);
 			}
-		}
-		else
-		{
-			txt+="<td></td>";
 		}
 		if(element.hasOwnProperty("info")) 
 		{
 			if(element.info.hasOwnProperty("Consumer"))
 			{
-				txt+="<td>"+element.info.Consumer+"</td>";
-			}
-			else
-			{
-				txt+="<td></td>";
+				cell1.innerHTML=element.info.Consumer;
 			}
 			if(element.info.hasOwnProperty("Interfaces"))
 			{
-				txt+="<td>"+element.info.Interfaces+"</td>";
-			}
-			else
-			{
-				txt+="<td></td>";
+				cell2.innerHTML=element.info.Interfaces;
 			}
 			if(element.info.hasOwnProperty("Component"))
 			{
-				txt+="<td>"+element.info.Component+"</td>";
-			}
-			else
-			{
-				txt+="<td></td>";
+				cell3.innerHTML=element.info.Component;
 			}
 			if(element.info.hasOwnProperty("ResponseFlow"))
 			{
-				txt+="<td>"+element.info.ResponseFlow+"</td>";
-			}
-			else
-			{
-				txt+="<td></td>";
+				cell4.innerHTML=element.info.ResponseFlow;
 			}
 			if(element.info.hasOwnProperty("Documents"))
 			{
-				txt+="<td>"+element.info.Documents+"</td>";
+				cell5.innerHTML=element.info.Documents;
 			}
-			else
-			{
-				txt+="<td></td>";
-			}
-			txt+="<td><button class=\"flowbutton\" id=\""+element.flow+"\" name=\""+element.flow+"\" onclick=\"doEdit(id)\">Edit</button></td>";
+			addButton(cell6, element.flow);
 		}
-		else
-		{
-			txt+="<td></td><td></td><td></td>";
-		}
-		txt+="</tr>";
-		return txt;
 	}
 	catch(e)
 	{
-		return(e);
+		alert(e);
 	}
 }
 
-function writeOilFlow(flowName)
+function writeOilFlow(flowname)
 {
-		var txt = "";		
-		txt=txt+"<table id=\"oilflows\"><tr><th>Flow</th><th>Consumer</th><th>Interfaces</th><th>Component</th><th>Response flow</th><th>Document References</th><th>Action</th></tr>";
+	try
+	{
+		var table = document.getElementById("oilflows");
+		while(table.rows.length>1)
+		{
+			table.deleteRow(-1);
+		}
 		for(var i=0; i<OilFlows.flows.length; i++)
 		{
-			if(flowName=="" || OilFlows.flows[i].flow==flowName)
-			{ 
-				txt+=writeElement(OilFlows.flows[i]);
+			if(flowname == "" ||OilFlows.flows[i].flow == flowname)
+			{
+				writeElement(table,OilFlows.flows[i]);
 			}
 		}
-		txt=txt+"</table>";
-		document.getElementById("list").innerHTML = txt;
-		buildOptions=false;
+		if(table.rows.length>1)
+		{
+			buildOptions=false;
+		}
+	}
+	catch(e)
+	{
+		alert("In writeOilFlow - error = "+e)
+	}
 }
 
 function NieuweKeuze()
@@ -137,69 +126,69 @@ function NieuweKeuze()
 
 function doEdit(id) 
 {
- for(var j=0; j<OilFlows.flows.length; j++)
- {
-	 if(OilFlows.flows[j].flow==id)
-	 { 
-		editFlowid=j;
-		writeOilFlow(OilFlows.flows[j].flow);
-		document.selectTrackingDomain.keuze.selectedIndex = j+1;
-		try
-		{
-			document.getElementById("editFormHeader").innerHTML="Edit Oil Flow: "+OilFlows.flows[j].flow;
-			document.editForm.style.display="block";
-			if(OilFlows.flows[j].info.hasOwnProperty("Consumer"))
+	for(var j=0; j<OilFlows.flows.length; j++)
+	{
+		if(OilFlows.flows[j].flow==id)
+		{ 
+			editFlowid=j;
+			writeOilFlow(OilFlows.flows[j].flow);
+			document.selectTrackingDomain.keuze.selectedIndex = j+1;
+			try
 			{
-				document.editForm.Consumer.value=OilFlows.flows[j].info.Consumer;
+				document.getElementById("editFormHeader").innerHTML="Edit Oil Flow: "+OilFlows.flows[j].flow;
+				document.editForm.style.display="block";
+				if(OilFlows.flows[j].info.hasOwnProperty("Consumer"))
+				{
+					document.editForm.Consumer.value=OilFlows.flows[j].info.Consumer;
+				}
+				else
+				{
+					document.editForm.Consumer.value="";
+				}
+				if(OilFlows.flows[j].info.hasOwnProperty("Interfaces"))
+				{
+					document.editForm.Interfaces.value=OilFlows.flows[j].info.Interfaces;
+				}
+				else
+				{
+					document.editForm.Interfaces.value="";
+				}
+				if(OilFlows.flows[j].info.hasOwnProperty("Component"))
+				{
+					document.editForm.Component.value=OilFlows.flows[j].info.Component;
+				}
+				else
+				{
+					document.editForm.Component.value="";
+				}
+				if(OilFlows.flows[j].info.hasOwnProperty("ResponseFlow"))
+				{
+					document.editForm.ResponseFlow.value=OilFlows.flows[j].info.ResponseFlow;
+				}
+				else
+				{
+					document.editForm.ResponseFlow.value="";
+				}
+				if(OilFlows.flows[j].info.hasOwnProperty("Documents"))
+				{
+					document.editForm.Documents.value=OilFlows.flows[j].info.Documents;
+				}
+				else
+				{
+					document.editForm.Documents.value="";
+				}
+				var saveBttn = document.getElementById("save");
+				saveBttn.disabled=true;
+				saveBttn.style.backgroundColor="grey";
+				document.getElementById("cancel").scrollIntoView();
 			}
-			else
+			catch(e)
 			{
-				document.editForm.Consumer.value="";
+				alert("foutje in doEdit => "+e);
 			}
-			if(OilFlows.flows[j].info.hasOwnProperty("Interfaces"))
-			{
-				document.editForm.Interfaces.value=OilFlows.flows[j].info.Interfaces;
-			}
-			else
-			{
-				document.editForm.Interfaces.value="";
-			}
-			if(OilFlows.flows[j].info.hasOwnProperty("Component"))
-			{
-				document.editForm.Component.value=OilFlows.flows[j].info.Component;
-			}
-			else
-			{
-				document.editForm.Component.value="";
-			}
-			if(OilFlows.flows[j].info.hasOwnProperty("ResponseFlow"))
-			{
-				document.editForm.ResponseFlow.value=OilFlows.flows[j].info.ResponseFlow;
-			}
-			else
-			{
-				document.editForm.ResponseFlow.value="";
-			}
-			if(OilFlows.flows[j].info.hasOwnProperty("Documents"))
-			{
-				document.editForm.Documents.value=OilFlows.flows[j].info.Documents;
-			}
-			else
-			{
-				document.editForm.Documents.value="";
-			}
-			var saveBttn = document.getElementById("save");
-			saveBttn.disabled=true;
-			saveBttn.style.backgroundColor="grey";
-			document.getElementById("cancel").scrollIntoView();
+			break;
 		}
-		catch(e)
-		{
-			alert("foutje in doEdit => "+e);
-		}
-		break;
-	 }
- }
+	}
 }
 
 function readOilFlows(evt) 
@@ -229,7 +218,6 @@ function readOilFlows(evt)
 					    	alert("Property 'flow' or 'info' element ["+i+"]");
 					    	return false;
 					}
-					document.selectTrackingDomain.keuze.innerHTML="<option></option>";	
 					buildOptions=true;	
 					document.editForm.style.display="none";
 					writeOilFlow("");
@@ -248,7 +236,7 @@ function readOilFlows(evt)
 		else
 		{
 			document.getElementById("trace").innerHTML+="FileReader NOT supported!<br>";
-		};
+		}
 	}
 	catch(e)
 	{
@@ -337,3 +325,30 @@ function enableButton()
 	}
 }
 
+function addOption(name)
+{
+    var x = document.createElement("OPTION");
+    x.setAttribute("value", name);
+    var t = document.createTextNode(name);
+    x.appendChild(t);
+    document.selectTrackingDomain.keuze.appendChild(x);
+}
+
+function addButton(item, id)
+{
+	try
+	{
+		var button = document.createElement("input");
+		button.type = "button";
+		button.id = id;
+		button.value = "Edit";
+		button.className = "flowbutton";
+		button.setAttribute("onclick", "doEdit(id)");
+	    item.appendChild(button);
+	}
+	catch(e)
+	{
+		alert("in addButton"+e);
+	}
+    return;
+}

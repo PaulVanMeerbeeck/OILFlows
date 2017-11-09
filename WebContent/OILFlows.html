@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<!--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  -->
 <link rel="stylesheet" href="css/OILFlows.css">
 <script type="text/javascript" src="js/OILFlows.js" ></script>
 <script type="text/javascript" src="js/OILFlowsData.js" ></script>
@@ -10,30 +10,39 @@
 </head>
 <body onload="getData()">
 	 <h1 align="center">Oil Flows Summary</h1>
+<div>
 <form name="selectTrackingDomain">
 <table style="width:100%">
 	<tr>
 <!-- 	<td><text>Select flows definition file: </text><input type="file" id="defFile" accept=".json" size="80"></td>  -->	
-		<td style="width:60%">Select tracking domain: <select name="keuze" id="options" onChange="NieuweKeuze()"></select></td>
+		<td style="width:60%">Select flow: <select name="keuze" id="options" onChange="NieuweKeuze()"></select></td>
 		<td style="width:20%"></td>
 		<td style="width:20%"><button id="saveFileBttn" name="saveFileBttn" type="button" class="flowbutton" style="display:none;" onclick="saveFile()">Save file update</button></td>
 	</tr>
 </table>
 </form>
 <br>
-<output id="list" ></output>
+</div>
+<div style="overflow-x:auto;">
+<table class="oilflows" id="oilflows">
+	<tr>
+		<th>Flow</th><th>Consumer</th><th>Interfaces</th><th>Component</th><th>Response flow</th><th>Document References</th><th>Action</th>
+	</tr>
+</table>
+</div>
 <br>
+<div>
 <form name="editForm" id="flowEdit">
-	<h2 id="editFormHeader">Edit Oil Flow: tata</h2>
-	<label>Consumer(s): </label><br><input type="text" name="Consumer" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px; border-collapse: collapse;" onchange="enableButton()"placeholder="List here the consumers that initiate the flow ...">
+	<h2 id="editFormHeader">Edit Oil Flow: </h2>
+	<label>Consumer(s): </label><br><input type="text" name="Consumer" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;border-collapse:collapse;" onchange="enableButton()" placeholder="List here the consumers that initiate the flow ..."/>
 	<br>
-	<label>Interfaces: </label><br><input type="text" name="Interfaces" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="Define here the OIL interfaces used by the consumers in this flow ...">
+	<label>Interfaces: </label><br><input type="text" name="Interfaces" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;" onchange="enableButton()" placeholder="Define here the OIL interfaces used by the consumers in this flow ...">
 	<br>
-	<label>Component: </label><br><input type="text" name="Component" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="List here the OIL components that implement the interface ...">
+	<label>Component: </label><br><input type="text" name="Component" style="width:100%;border:0px;padding-top:8px;padding-bottom: 8px;" onchange="enableButton()" placeholder="List here the OIL components that implement the interface ...">
 	<br>
-	<label>ResponseFlow: </label><br><textarea rows="4" name="ResponseFlow" style="width:100%; border:0px; padding-top: 8px; padding-bottom: 8px;" onchange="enableButton()"  placeholder="Describe response flow here ..."></textarea>
+	<label>ResponseFlow: </label><br><textarea rows="4" name="ResponseFlow" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;" onchange="enableButton()" placeholder="Describe response flow here ..."></textarea>
 	<br>
-	<label>Documents: </label><br><textarea rows="4" name="Documents" style="width:100%; border:0px; padding-top: 8px;	padding-bottom: 8px;" onchange="enableButton()" placeholder="List documents on this flow ..."></textarea>
+	<label>Documents: </label><br><textarea rows="4" name="Documents" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;" onchange="enableButton()" placeholder="List documents on this flow ..."></textarea>
 	<br>
 	<br>
 	<table style="width:100%">
@@ -46,7 +55,10 @@
 	</table>
 	<br> 
 </form>
+</div>
+<div>
 <output id="trace"></output>
+</div>
 <script>
 /* This is disbaled as input button of type file is replaced by include of json object
  * defined in OILFlowsData.js - see element with id defFile above

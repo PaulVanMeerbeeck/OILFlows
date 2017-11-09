@@ -1,4 +1,3 @@
-@CHARSET "ISO-8859-1";
 
 body {
 	margin: 0 1 0 0; 
@@ -8,6 +7,11 @@ body {
 	border-right-width: 0px; 
 	border-top-width: 0px; 
 	border-color:#29A2DB;
+}
+
+textarea, input {
+	font-family: inherit;
+	font-size: inherit;
 }
 
 h1   {
@@ -20,29 +24,29 @@ p    {
 	color:black;
 }
 
-#oilflows, .flowbutton, text {
+.oilflows, .flowbutton, text {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
 	font-size: 12px;
     width: 100%;
 }
 
-#oilflows td, #oilflows th {
+.oilflows td, .oilflows th {
     border: 1px solid #ddd;
     padding: 8px;
 }
 	
-#oilflows tr:nth-child(even) { background-color: #f2f2f2; }
+.oilflows tr:hover { background-color: #ddd; }
 
-#oilflows tr:hover { background-color: #ddd; }
-
-#oilflows th {
+.oilflows th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #0099db;
     color: white;
 }
+
+.oilflows tr:nth-child(even) { background-color: #f2f2f2; }
 
 .flowbutton {
     padding-top: 2px;
@@ -66,7 +70,6 @@ p    {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	background-color: #ddd;
 	color:white;
-	display:none;	
 }
 
 #editFormHeader {
