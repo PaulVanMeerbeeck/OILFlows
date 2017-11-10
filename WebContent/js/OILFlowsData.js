@@ -1,7 +1,7 @@
 /**
  * 
  */
-OilFlows={
+OilFlows = {
   "flows": [
     {
       "flow": "AHS",
