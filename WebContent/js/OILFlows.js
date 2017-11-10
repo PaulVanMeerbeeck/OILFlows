@@ -3,7 +3,7 @@
  */
 
 var OilFlows;	
-var theNameOfTheFile;
+var theNameOfTheFile = "OILFlowsData.js";
 var editFlowid;
 
 var buildOptions=true;
@@ -218,14 +218,14 @@ function readOilFlows(evt)
 					    	alert("Property 'flow' or 'info' element ["+i+"]");
 					    	return false;
 					}
-					buildOptions=true;	
+					buildOptions=true;
 					document.editForm.style.display="none";
 					writeOilFlow("");
-				};
+				}
 				reader.onerror = function()
 				{
 					document.getElementById("trace").innerHTML+="onerror function called.<br>";
-				};
+				}
 				reader.readAsText(file);
 			}
 			catch(e)
@@ -344,6 +344,10 @@ function addButton(item, id)
 		button.value = "Edit";
 		button.className = "flowbutton";
 		button.setAttribute("onclick", "doEdit(id)");
+/*		
+		button.addEventListener("click", function() {
+			doEdit(id);
+		}); */
 	    item.appendChild(button);
 	}
 	catch(e)
