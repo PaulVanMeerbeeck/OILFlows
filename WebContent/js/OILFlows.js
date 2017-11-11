@@ -296,7 +296,7 @@ function saveFile()
   							location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
   						}
 				};
-		var jsonContent=JSON.stringify(OilFlows,null,'  ');
+		var jsonContent="/**\n *\n */\nOilFlows = "+JSON.stringify(OilFlows,null,'  ');
 		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');
 		document.getElementById("saveFileBttn").disabled=true;
 		document.getElementById("saveFileBttn").style.backgroundColor="lightgrey";
