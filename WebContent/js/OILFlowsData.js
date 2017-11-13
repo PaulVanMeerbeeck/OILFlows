@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 OilFlows = {
   "flows": [
@@ -7,10 +7,10 @@ OilFlows = {
       "flow": "AHS",
       "info": {
         "Consumer": "AHS applicaton",
-        "Interfaces": "HC6150, HC6151, HC6152, HC6154",
+        "Interfaces": "HC6150<br>HC6151<br>HC6152<br>HC6154",
         "Component": "OILAHS",
         "ResponseFlow": "OMS to OILNOTIF",
-        "Documents": "OIL FD-NWS (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=061280008\">061280008</a>)<br>OIL Analysis - NWS - Technical Design ((<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=062050064\">062050064</a>)"
+        "Documents": "OIL FD-NWS (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=061280008\">061280008</a>)<br>OIL Analysis - NWS - Technical Design ((<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=062050064\">062050064</a>)<br><br><br>"
       }
     },
     {
@@ -30,7 +30,7 @@ OilFlows = {
         "Interfaces": "HC6091",
         "Component": "OILVOIP",
         "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB",
-        "Documents": "No relevant doc in panagon."
+        "Documents": "No relevant documentation in panagon."
       }
     },
     {
@@ -46,11 +46,11 @@ OilFlows = {
     {
       "flow": "BPM",
       "info": {
-        "Consumer": "BPM",
-        "Interfaces": "HC6097",
-        "Component": "OILVOIP",
-        "ResponseFlow": "In this flow OMS is the consumer. It sends a notification of type 'Request BPM Delivery and handle BPM Response_ReqDel' that is send to ESB. BPM responds via HC6097.",
-        "Documents": "OIL FD - Dispatch to BPM (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070750039\">070750039</a>)<br>OIL TD - OILBPM_DISP (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070930041\">070930041</a>)"
+        "Consumer": "BPM<br><br><br>IDTV<br><br><br>",
+        "Interfaces": "HC6097<br><br><br>HC6081<br><br><br>",
+        "Component": "OILVOIP<br><br><br>OILBPM<br><br><br>",
+        "ResponseFlow": "In the HC6097 flow OMS is the consumer. It sends a notification of type 'Request BPM Delivery and handle BPM Response_ReqDel' that is send to ESB. BPM responds via HC6097.<br><br>In the HC6081 flow IDTV calls OIL to send a mail.<br><br><br>",
+        "Documents": "OIL FD - Dispatch to BPM (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070750039\">070750039</a>)<br>OIL TD - OILBPM_DISP (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070930041\">070930041</a>)<br><br>OIL Analysis - BPM (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=051390079\">051390079</a>)<br>OIL FD - BPM Implementation for iDTV option activation (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=051430013\">051430013</a>)"
       }
     },
     {
@@ -79,8 +79,8 @@ OilFlows = {
         "Consumer": "tbd",
         "Interfaces": "File in /oilp/oil/var/OILCDBDIMS/input",
         "Component": "OILCDBDIMS<br>exposing BatchCDBDIMS",
-        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6044) ->BIP Cached",
-        "Documents": ""
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6044) ->BIP Cached<br>OMS-OILNOTIF (HC6025)->OILESB_DISP->CTG<br>OMS-OILNOTIF (HC6025)->OILCAMP->OILBEAC",
+        "Documents": "No relevant documentation in panagon."
       }
     },
     {
@@ -99,7 +99,7 @@ OilFlows = {
         "Interfaces": "File in /oilp/oil/var/OILCDBMC/input",
         "Component": "OILCDBMC<br>exposing BatchCDBMC",
         "ResponseFlow": "OMS->OILORDERNOTIF (HC6087) -> ESB<br>OMS->OILNOTIF (HC6025) -> ESB (CTG)<br>OMS->OILNOTIF (HC6037) -> DMS<br>OMS->OILNOTIF (HC6038) -> TTS",
-        "Documents": "OIL Analysis - CDB Merge Customer (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810013\">022810013</a>)"
+        "Documents": "P121047B06 - OIL Analysis Design Ver1.2 (<a target=_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580098\">153580098</a>)<br>OIL Analysis - CDB Merge Customer (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810013\">022810013</a>)"
       }
     },
     {
@@ -139,7 +139,7 @@ OilFlows = {
         "Interfaces": "HC6091<br>File in /oilp/oil/var/OILCOB",
         "Component": "OILVOIP<br>OILCOB",
         "ResponseFlow": "OMS->OILNOTIF->OILCOB_DISP (sends email to COB Hotline)",
-        "Documents": "<br>OIL Analysis - COB (<a  target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810016\\\">022810016</a>)"
+        "Documents": "OIL Analysis - COB (<a  target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810016\\\">022810016</a>)"
       }
     },
     {
@@ -149,7 +149,7 @@ OilFlows = {
         "Interfaces": "HC6033",
         "Component": "OILCPS",
         "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILCSP_DISP<br>OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6037)->DMS<br>OMS->OILNOTIF (HC6025)->OILBPM_DISP->OFA(RequestDataSynchronizeVoipConfiguration)",
-        "Documents": "OIL Analysis - CPS (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810018\\\">022810018</a>)"
+        "Documents": "OIL Analysis - CPS (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810018\\\">022810018</a>)<br><br><br><br>"
       }
     },
     {
@@ -235,7 +235,7 @@ OilFlows = {
     {
       "flow": "MTMK",
       "info": {
-        "Consumer": "tbd",
+        "Consumer": "MTMK",
         "Interfaces": "HC6159",
         "Component": "OILPOM",
         "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6025)->OILSOA_DISP->MTMK (bgc.services.mtmk.orderingfeedback.v1)",
@@ -315,43 +315,71 @@ OilFlows = {
     {
       "flow": "OrderCompletion",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "OrderFulfilment",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "POM",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "POM",
+        "Interfaces": "HC6153<br>HC6157<br>HC6160",
+        "Component": "OILPOM",
+        "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILPOM_DISP->v1.handlecustomersituation.pom.services.bgc<br>\nOMS->OILNOTIF (HC6025)->OILESB_DISP->ESB (CTG)<br>\nOMS->OILORDERNOTIF (HC6087)->ESB<br>\nOMS->OILNOTIF (HC6038)->OILTTS_DISP<br>",
+        "Documents": "OILPOM Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=151750001\">151750001</a>)<br>OILSOA_DISP Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=110240003\">110240003</a>)<br><br><br>"
       }
     },
     {
       "flow": "PPC",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "PPC?",
+        "Interfaces": "HC6091",
+        "Component": "OILVOIP",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB or Message ignored because CustomerSubSegment not supported<br>\nOMS->OILNOTIF (HC6037)->OILDMS_DISP<br>\nOMS->OILNOTIF (HC6037)->OILEV_DISP<br>\nOMS->OILNOTIF (HC6038)->OILTTS_DISP<br>\nOMS->OILNOTIF (HC6025)->OILESB_DISP->CTG",
+        "Documents": "<br><br><br><br>P121047B06 - OIL Analysis Design Ver1.2 (<a target=_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=153580098\">153580098</a>)\n"
       }
     },
     {
       "flow": "RHE",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "RHE",
+        "Interfaces": "HC6082 (OHE in BMT!)",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "There is no response flow. OILEXTLOG allows non-OIL components to log into the OIL DB",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "ROSY",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "Rosy",
+        "Interfaces": "HC6158",
+        "Component": "OILPOM",
+        "ResponseFlow": "OILPOM sends BGCOUT15 to OLO and omsorder to OMS.<br>OMS->OILORDERNOTIF (HC6087)->ESB",
+        "Documents": "OILPOM Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=151750001\">151750001</a>)"
       }
     },
     {
       "flow": "Retry2646",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": ""
       }
     },
     {
@@ -426,4 +454,3 @@ OilFlows = {
     "component": ""
   }
 }
-
