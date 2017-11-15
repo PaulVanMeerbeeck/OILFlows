@@ -2,6 +2,7 @@
  *
  */
 OilFlows = {
+  "Status":"locked",
   "flows": [
     {
       "flow": "AHS",
@@ -379,31 +380,47 @@ OilFlows = {
         "Interfaces": "HC6082",
         "Component": "OILEXTLOG",
         "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
-        "Documents": ""
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "RosyAsynch",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "RosyReportStatus",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "RosyRetry",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "SEAP",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "SEAP",
+        "Interfaces": "HC6156",
+        "Component": "OILSEAP",
+        "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILSEAP_DISP->SEAP<br>OMS->OILNOTIF (HC6025)->OILESB_DISP->ESB (CTG)<br>OMS->OILORDERNOTIF (HC6087)->ESB\n",
+        "Documents": "OIL Analysis - OILSEAP (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=112730007\">112730007</a>)<br>OIL Analysis - OILSEAP_DISP_v1.2 (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=121780002\">121780002</a>)"
       }
     },
     {
@@ -412,20 +429,28 @@ OilFlows = {
         "Consumer": "SHE",
         "Interfaces": "HC6082",
         "Component": "OILEXTLOG",
-        "ResponseFlow": "",
-        "Documents": ""
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "2651Process",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "IDTV",
+        "Interfaces": "HC6082",
+        "Component": "OILEXTLOG",
+        "ResponseFlow": "No response flow. OILEXTLOG allows non-OIL components to log into the OIL DB.",
+        "Documents": "OIL FD - External Logging (<a target=\"_blank\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070850041\">070850041</a>)"
       }
     },
     {
       "flow": "CEASE",
       "info": {
-        "Consumer": "tbd"
+        "Consumer": "CDB",
+        "Interfaces": "HC6046",
+        "Component": "OILCEASE",
+        "ResponseFlow": "OMS->OILORDERNOTIF (HC6087)->ESB",
+        "Documents": "OIL Analysis - Cease function (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=023250089\">023250089</a>)"
       }
     },
     {

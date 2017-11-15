@@ -2,6 +2,7 @@
  * 
  */
 
+var dataLocked = false;
 var OilFlows;	
 var theNameOfTheFile = "OILFlowsData.js";
 var editFlowid;
@@ -46,7 +47,11 @@ function writeElement(table,element)
 		var cell3 = row.insertCell(3);
 		var cell4 = row.insertCell(4);
 		var cell5 = row.insertCell(5);
-		var cell6 = row.insertCell(6);
+		var cell6;
+		if(dataLocked==false)
+		{
+			cell6 = row.insertCell(6);
+		}
 		
 		if(element.hasOwnProperty("flow"))
 		{
@@ -78,7 +83,10 @@ function writeElement(table,element)
 			{
 				cell5.innerHTML=element.info.Documents;
 			}
-			addButton(cell6, element.flow);
+			if(dataLocked==false)
+			{
+				addButton(cell6, element.flow);
+			}
 		}
 	}
 	catch(e)
@@ -95,6 +103,14 @@ function writeOilFlow(flowname)
 		while(table.rows.length>1)
 		{
 			table.deleteRow(-1);
+		}
+		if(OilFlows.hasOwnProperty("Status"))
+		{
+			if(OilFlows.Status=="locked") dataLocked=true;;
+		}
+		if(dataLocked)
+		{
+			table.rows[0].deleteCell(6);
 		}
 		for(var i=0; i<OilFlows.flows.length; i++)
 		{
