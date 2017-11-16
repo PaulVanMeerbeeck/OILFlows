@@ -106,11 +106,18 @@ function writeOilFlow(flowname)
 		}
 		if(OilFlows.hasOwnProperty("Status"))
 		{
-			if(OilFlows.Status=="locked") dataLocked=true;;
+			if(OilFlows.Status=="locked") dataLocked=true;
+			var urlParams = new URLSearchParams(window.location.search);
+			var status = urlParams.get("status");
+			if(status && status=="unlocked")
+			{
+				dataLocked = false;
+			}
 		}
 		if(dataLocked)
 		{
-			table.rows[0].deleteCell(6);
+			var hRow = table.rows[0];
+			if(hRow.cells.length>6) hRow.deleteCell(6);
 		}
 		for(var i=0; i<OilFlows.flows.length; i++)
 		{
