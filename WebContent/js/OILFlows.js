@@ -110,7 +110,8 @@ function writeOilFlow(flowname)
 		}
 		if(dataLocked)
 		{
-			table.rows[0].deleteCell(6);
+			var hRow = table.rows[0];
+			if(hRow.cells.length>6) hRow.deleteCell(6);
 		}
 		for(var i=0; i<OilFlows.flows.length; i++)
 		{
