@@ -33,7 +33,7 @@ p    {
 
 .oilflows td, .oilflows th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
 }
 	
 .oilflows tr:hover { background-color: #ddd; }
