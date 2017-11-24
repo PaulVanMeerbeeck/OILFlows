@@ -7,9 +7,19 @@
 <script type="text/javascript" src="js/OILFlows.js" ></script>
 <script type="text/javascript" src="js/OILFlowsData.js" ></script>
 <title>OILFlows</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body onload="getData()">
-	 <h1 align="center">OIL - Active Flows Summary</h1>
+	 <h1 align="center">OIL - Documentation Summary Overview</h1>
+	 <br>
+<div class="tab">
+  <button class="tablinks" onclick="openFlow(event, 'active')">Active Flows</button>
+  <button class="tablinks" onclick="openFlow(event, 'compobs')">Obsolete Components</button>
+  <button class="tablinks" onclick="openFlow(event, 'docobs')">Obsolete Documents</button>
+</div>
+<br>
+<div id="active" class="tabcontent">
 <div>
 <form name="selectTrackingDomain">
 <table style="width:100%">
@@ -55,6 +65,14 @@
 	</table>
 	<br> 
 </form>
+</div>
+</div>
+<div style="overflow-x:auto;" class="tabcontent" id="compobs">
+	<table class="oilflows" id="obsoletecomponents">
+		<tr>
+			<th>Component</th><th>Configuration Item</th><th>Document References</th><th>Interfaces</th>
+		</tr>
+	</table>
 </div>
 <div>
 <output id="trace"></output>

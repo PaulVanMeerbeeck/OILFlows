@@ -17,6 +17,37 @@ function getData()
 	{
 		var browser = detectIE();
 		if(browser==false) isIE=false;
+		if(OilFlows != null && OilFlows.hasOwnProperty("obsolete"))
+		{
+			var table = document.getElementById("obsoletecomponents");
+			if(OilFlows.obsolete.hasOwnProperty("components") )
+			{
+				for(var j=0; j<OilFlows.obsolete.components.length; j++)
+				{
+					var row = table.insertRow();
+					var cell0 = row.insertCell(0);
+					var cell1 = row.insertCell(1);
+					var cell2 = row.insertCell(2);
+					var cell3 = row.insertCell(3);
+					if(OilFlows.obsolete.components[j].hasOwnProperty("name"))
+					{
+						cell0.innerHTML=OilFlows.obsolete.components[j].name;
+					}
+					if(OilFlows.obsolete.components[j].hasOwnProperty("config"))
+					{
+						cell1.innerHTML=OilFlows.obsolete.components[j].config;
+					}
+					if(OilFlows.obsolete.components[j].hasOwnProperty("doc"))
+					{
+						cell2.innerHTML=OilFlows.obsolete.components[j].doc;
+					}
+					if(OilFlows.obsolete.components[j].hasOwnProperty("interfaces"))
+					{
+						cell3.innerHTML=OilFlows.obsolete.components[j].interfaces;
+					}
+				}
+			}
+		}
 		if(OilFlows != null && OilFlows.hasOwnProperty("flows"))
 		{
 			for( var i=0; i<OilFlows.flows.length; i++)
@@ -439,4 +470,18 @@ function detectIE()
 
   // other browser
   return false;
+}
+
+function openFlow(evt, flowType) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(flowType).style.display = "block";
+    evt.currentTarget.className += " active";
 }
