@@ -7,7 +7,7 @@ var OilFlows;
 var theNameOfTheFile = "OILFlowsData.js";
 var editFlowid;
 var isIE = true;
-
+var activeTab = "active";
 var buildOptions=true;
 
 
@@ -52,10 +52,10 @@ function getData()
 		{
 			for( var i=0; i<OilFlows.flows.length; i++)
 			{
-			    	var elem = OilFlows.flows[i];
-			    	if(elem.hasOwnProperty("flow") && elem.hasOwnProperty("info")) continue;
-			    	alert("Property 'flow' or 'info' element ["+i+"]");
-			    	return;
+				var elem = OilFlows.flows[i];
+				if(elem.hasOwnProperty("flow") && elem.hasOwnProperty("info")) continue;
+				alert("Property 'flow' or 'info' element ["+i+"]");
+				return;
 			}
 		}
 		addOption("");	
@@ -86,7 +86,7 @@ function writeElement(table,element)
 		{
 			cell6 = row.insertCell(6);
 		}
-		
+
 		if(element.hasOwnProperty("flow"))
 		{
 			cell0.innerHTML=element.flow;
@@ -152,7 +152,7 @@ function writeOilFlow(flowname)
 				{
 					dataLocked = false;
 				}
-				
+
 			}
 		}
 		if(dataLocked)
@@ -272,15 +272,15 @@ function readOilFlows(evt)
 					OilFlows = JSON.parse(data);
 					if(!OilFlows.hasOwnProperty("flows")) 
 					{
-					    	alert("Property 'flows' not found in definition file! Select another file.");
-					    	return false;
+						alert("Property 'flows' not found in definition file! Select another file.");
+						return false;
 					}
 					for( var i=0; i<OilFlows.flows.length; i++)
 					{
-					    	var elem = OilFlows.flows[i];
-					    	if(elem.hasOwnProperty("flow") && elem.hasOwnProperty("info")) continue;
-					    	alert("Property 'flow' or 'info' element ["+i+"]");
-					    	return false;
+						var elem = OilFlows.flows[i];
+						if(elem.hasOwnProperty("flow") && elem.hasOwnProperty("info")) continue;
+						alert("Property 'flow' or 'info' element ["+i+"]");
+						return false;
 					}
 					buildOptions=true;
 					document.editForm.style.display="none";
@@ -304,7 +304,7 @@ function readOilFlows(evt)
 	}
 	catch(e)
 	{
-			alert("catched error "+e);
+		alert("catched error "+e);
 	}
 }
 
@@ -316,7 +316,7 @@ function saveEdit()
 	OilFlows.flows[editFlowid].info.Component=document.editForm.Component.value;
 	OilFlows.flows[editFlowid].info.ResponseFlow=document.editForm.ResponseFlow.value;
 	OilFlows.flows[editFlowid].info.Documents=document.editForm.Documents.value;
- 	writeOilFlow(OilFlows.flows[editFlowid].flow);
+	writeOilFlow(OilFlows.flows[editFlowid].flow);
 	document.selectTrackingDomain.keuze.selectedIndex = editFlowid+1;
 	document.getElementById("saveFileBttn").style.display="block";
 	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
@@ -327,8 +327,8 @@ function saveEdit()
 function cancelEdit()
 {
 	document.editForm.style.display="none";
- 	writeOilFlow(OilFlows.flows[editFlowid].flow);
- 	document.selectTrackingDomain.keuze.selectedIndex = editFlowid+1;
+	writeOilFlow(OilFlows.flows[editFlowid].flow);
+	document.selectTrackingDomain.keuze.selectedIndex = editFlowid+1;
 	return true;
 }
 
@@ -338,28 +338,28 @@ function saveFile()
 	{	// The download function takes a CSV string, the filename and mimeType as parameters
 		// Scroll/look down at the bottom of this snippet to see how download is called
 		var download = function(content, fileName, mimeType) 
-				{
-  					var a = document.createElement('a');
-  					mimeType = mimeType || 'application/octet-stream';
+		{
+			var a = document.createElement('a');
+			mimeType = mimeType || 'application/octet-stream';
 
-  					if (navigator.msSaveBlob) 
-  					{	// IE10
-  						navigator.msSaveBlob(new Blob([content], {type: mimeType}), fileName);
-  					}
-  					else 
-  						if (URL && 'download' in a)
-  						{ //html5 A[download]
-  							a.href = URL.createObjectURL(new Blob([content], {type: mimeType}));
-  							a.setAttribute('download', fileName);
-  							document.body.appendChild(a);
-  							a.click();
-  							document.body.removeChild(a);
-  						}
-  						else
-  						{
-  							location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
-  						}
-				};
+			if (navigator.msSaveBlob) 
+			{	// IE10
+				navigator.msSaveBlob(new Blob([content], {type: mimeType}), fileName);
+			}
+			else 
+				if (URL && 'download' in a)
+				{ //html5 A[download]
+					a.href = URL.createObjectURL(new Blob([content], {type: mimeType}));
+					a.setAttribute('download', fileName);
+					document.body.appendChild(a);
+					a.click();
+					document.body.removeChild(a);
+				}
+				else
+				{
+					location.href = 'data:application/octet-stream,' + encodeURIComponent(content); // only this mime type is supported
+				}
+		};
 		var jsonContent="/**\n *\n */\nOilFlows = "+JSON.stringify(OilFlows,null,'  ');
 		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');
 		document.getElementById("saveFileBttn").disabled=true;
@@ -391,11 +391,11 @@ function enableButton()
 
 function addOption(name)
 {
-    var x = document.createElement("OPTION");
-    x.setAttribute("value", name);
-    var t = document.createTextNode(name);
-    x.appendChild(t);
-    document.selectTrackingDomain.keuze.appendChild(x);
+	var x = document.createElement("OPTION");
+	x.setAttribute("value", name);
+	var t = document.createTextNode(name);
+	x.appendChild(t);
+	document.selectTrackingDomain.keuze.appendChild(x);
 }
 
 function addButton(item, id)
@@ -410,7 +410,7 @@ function addButton(item, id)
 		if(isIE)
 		{
 			button.setAttribute("onclick", "doEdit(id)");
-			
+
 		}
 		else
 		{		
@@ -418,13 +418,13 @@ function addButton(item, id)
 				doEdit(id);
 			});
 		}
-	    item.appendChild(button);
+		item.appendChild(button);
 	}
 	catch(e)
 	{
 		alert("in addButton"+e);
 	}
-    return;
+	return;
 }
 
 /**
@@ -433,55 +433,93 @@ function addButton(item, id)
  */
 function detectIE() 
 {
-  var ua = window.navigator.userAgent;
+	var ua = window.navigator.userAgent;
 
-  // Test values; Uncomment to check result …
+	// Test values; Uncomment to check result …
 
-  // IE 10
-  // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
-  
-  // IE 11
-  // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
-  
-  // Edge 12 (Spartan)
-  // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
-  
-  // Edge 13
-  // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+	// IE 10
+	// ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
 
-  var msie = ua.indexOf('MSIE ');
-  if (msie > 0) {
-    // IE 10 or older => return version number
-    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
-  }
+	// IE 11
+	// ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
 
-  var trident = ua.indexOf('Trident/');
-  if (trident > 0) {
-    // IE 11 => return version number
-    var rv = ua.indexOf('rv:');
-    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
-  }
+	// Edge 12 (Spartan)
+	// ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
 
-  var edge = ua.indexOf('Edge/');
-  if (edge > 0) {
-    // Edge (IE 12+) => return version number
-    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
-  }
+	// Edge 13
+	// ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
 
-  // other browser
-  return false;
+	var msie = ua.indexOf('MSIE ');
+	if (msie > 0) 
+	{
+		// IE 10 or older => return version number
+		return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+	}
+
+	var trident = ua.indexOf('Trident/');
+	if (trident > 0) 
+	{
+		// IE 11 => return version number
+		var rv = ua.indexOf('rv:');
+		return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+	}
+
+	var edge = ua.indexOf('Edge/');
+	if (edge > 0) 
+	{
+		// Edge (IE 12+) => return version number
+		return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+	}
+
+	// other browser
+	return false;
 }
 
-function openFlow(evt, flowType) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(flowType).style.display = "block";
-    evt.currentTarget.className += " active";
+function openFlow(evt, flowType) 
+{
+	document.getElementById("idFlowSearch").value="";
+	flowSearch();
+	activeTab = flowType;
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++)
+	{
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++)
+	{
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(flowType).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+
+function flowSearch()
+{
+	if(activeTab=="active")
+	{
+		var theTable = document.getElementById("oilflows");
+		setTableView(theTable, document.getElementById("idFlowSearch").value);
+	}
+	else if(activeTab=="compobs")
+	{
+		var theTable = document.getElementById("obsoletecomponents");
+		setTableView(theTable, document.getElementById("idFlowSearch").value);
+	}
+}
+
+function setTableView(aTable, selector)
+{
+	for(var i=1; i< aTable.rows.length; i++)
+	{
+		if(aTable.rows[i].cells[0].innerHTML.toLowerCase().includes(selector.toLowerCase()) || selector=="")
+		{
+			aTable.rows[i].style.display = "table-row";
+		}
+		else
+		{
+			aTable.rows[i].style.display = "none";				
+		}
+	}
 }
