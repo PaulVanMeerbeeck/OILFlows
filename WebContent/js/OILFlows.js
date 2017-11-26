@@ -8,8 +8,6 @@ var theNameOfTheFile = "OILFlowsData.js";
 var editFlowid;
 var isIE = true;
 var activeTab = "active";
-var buildOptions=true;
-
 
 function getData()
 {
@@ -58,8 +56,6 @@ function getData()
 				return;
 			}
 		}
-		addOption("");	
-		buildOptions=true;	
 		document.editForm.style.display="none";
 		writeOilFlow("");
 		return;
@@ -90,10 +86,6 @@ function writeElement(table,element)
 		if(element.hasOwnProperty("flow"))
 		{
 			cell0.innerHTML=element.flow;
-			if(buildOptions)
-			{
-				addOption(element.flow);
-			}
 		}
 		if(element.hasOwnProperty("info")) 
 		{
@@ -162,30 +154,16 @@ function writeOilFlow(flowname)
 		}
 		for(var i=0; i<OilFlows.flows.length; i++)
 		{
-			if(flowname == "" ||OilFlows.flows[i].flow == flowname)
+			if(flowname == "" || OilFlows.flows[i].flow == flowname)
 			{
 				writeElement(table,OilFlows.flows[i]);
 			}
-		}
-		if(table.rows.length>1)
-		{
-			buildOptions=false;
 		}
 	}
 	catch(e)
 	{
 		alert("In writeOilFlow - error = "+e)
 	}
-}
-
-function NieuweKeuze()
-{
-	var selectedFlow = document.selectTrackingDomain.keuze[document.selectTrackingDomain.keuze.selectedIndex].value;
-	var selectedIndex = document.selectTrackingDomain.keuze.selectedIndex;
-	writeOilFlow(selectedFlow);
-	document.selectTrackingDomain.keuze.selectedIndex = selectedIndex;
-	document.editForm.style.display="none";
-	return true;
 }
 
 function doEdit(id) 
@@ -195,8 +173,7 @@ function doEdit(id)
 		if(OilFlows.flows[j].flow==id)
 		{ 
 			editFlowid=j;
-			writeOilFlow(OilFlows.flows[j].flow);
-			document.selectTrackingDomain.keuze.selectedIndex = j+1;
+			setTableViewByIndex(document.getElementById("oilflows"),editFlowid);
 			try
 			{
 				document.getElementById("editFormHeader").innerHTML="Edit Oil Flow: "+OilFlows.flows[j].flow;
@@ -282,7 +259,6 @@ function readOilFlows(evt)
 						alert("Property 'flow' or 'info' element ["+i+"]");
 						return false;
 					}
-					buildOptions=true;
 					document.editForm.style.display="none";
 					writeOilFlow("");
 				}
@@ -316,8 +292,8 @@ function saveEdit()
 	OilFlows.flows[editFlowid].info.Component=document.editForm.Component.value;
 	OilFlows.flows[editFlowid].info.ResponseFlow=document.editForm.ResponseFlow.value;
 	OilFlows.flows[editFlowid].info.Documents=document.editForm.Documents.value;
-	writeOilFlow(OilFlows.flows[editFlowid].flow);
-	document.selectTrackingDomain.keuze.selectedIndex = editFlowid+1;
+	writeOilFlow("");
+	flowSearch();
 	document.getElementById("saveFileBttn").style.display="block";
 	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
 	document.getElementById("saveFileBttn").disabled=false;
@@ -327,8 +303,7 @@ function saveEdit()
 function cancelEdit()
 {
 	document.editForm.style.display="none";
-	writeOilFlow(OilFlows.flows[editFlowid].flow);
-	document.selectTrackingDomain.keuze.selectedIndex = editFlowid+1;
+	flowSearch();
 	return true;
 }
 
@@ -387,15 +362,6 @@ function enableButton()
 	{
 		alert("foutje in enableButton "+e);
 	}
-}
-
-function addOption(name)
-{
-	var x = document.createElement("OPTION");
-	x.setAttribute("value", name);
-	var t = document.createTextNode(name);
-	x.appendChild(t);
-	document.selectTrackingDomain.keuze.appendChild(x);
 }
 
 function addButton(item, id)
@@ -500,20 +466,35 @@ function flowSearch()
 	if(activeTab=="active")
 	{
 		var theTable = document.getElementById("oilflows");
-		setTableView(theTable, document.getElementById("idFlowSearch").value);
+		setTableViewBySelector(theTable, document.getElementById("idFlowSearch").value);
 	}
 	else if(activeTab=="compobs")
 	{
 		var theTable = document.getElementById("obsoletecomponents");
-		setTableView(theTable, document.getElementById("idFlowSearch").value);
+		setTableViewBySelector(theTable, document.getElementById("idFlowSearch").value);
 	}
 }
 
-function setTableView(aTable, selector)
+function setTableViewBySelector(aTable, selector)
 {
 	for(var i=1; i< aTable.rows.length; i++)
 	{
 		if(aTable.rows[i].cells[0].innerHTML.toLowerCase().includes(selector.toLowerCase()) || selector=="")
+		{
+			aTable.rows[i].style.display = "table-row";
+		}
+		else
+		{
+			aTable.rows[i].style.display = "none";				
+		}
+	}
+}
+
+function setTableViewByIndex(aTable, idx)
+{
+	for(var i=1; i< aTable.rows.length; i++)
+	{
+		if(i==idx+1)
 		{
 			aTable.rows[i].style.display = "table-row";
 		}
