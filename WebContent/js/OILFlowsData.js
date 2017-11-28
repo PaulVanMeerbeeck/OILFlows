@@ -334,15 +334,15 @@ OilFlows = {
       }
     },
     {
-        "flow": "TBF",
-        "info": {
-          "Consumer": "TBF",
-          "Interfaces": "HC6085",
-          "Component": "OILSOA",
-          "ResponseFlow": "none. OILSOA->OILDARE_DISP->OLO (BGCOUT12)->Xml (MTS) or Email\n",
-          "Documents": "OIL FD - CWS Bitstream access evolution (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=083010014\">083010014</a>)<br>OIL Analysis - CWS Bitstream access evolution (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=083010013\">083010013</a>)"
-        }
-      },
+      "flow": "TBF",
+      "info": {
+        "Consumer": "TBF",
+        "Interfaces": "HC6085",
+        "Component": "OILSOA",
+        "ResponseFlow": "none. OILSOA->OILDARE_DISP->OLO (BGCOUT12)->Xml (MTS) or Email\n",
+        "Documents": "OIL FD - CWS Bitstream access evolution (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=083010014\">083010014</a>)<br>OIL Analysis - CWS Bitstream access evolution (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=083010013\">083010013</a>)"
+      }
+    },
     {
       "flow": "IVR",
       "info": {
@@ -495,42 +495,237 @@ OilFlows = {
     }
   ],
   "obsolete": {
-    "doc": ["OIL FD - Voice over IP (052370034)"],
-    "components": [{"name":"OIL_DYNAMIC_PARAMETERS","config":"DB tables: <i>mail_template_dyn_param</i> is empty.","doc":"","interfaces":"none"},
-                   {"name":"OIL_SOA","config":"empty clearcase component.","doc":"","interfaces":"none"},
-                   {"name":"MAILING_TEMPLATE","config":"none","doc":"<a target=\"_default\" href=\" \"></a>","interfaces":"none"},
-                   {"name":"MAILING_TEMPLATES","config":"none","doc":"<a target=\"_default\" href=\" \"></a>","interfaces":"none"},
-                   {"name":"OILABR","config":"none","doc":"<a target=\"_default\" href=\" \"></a>","interfaces":"Tuxedo: BatchABR, Files: ${FTPHOME}/OILABR/input"},
-                   {"name":"OILASN","config":"none","doc":"OIL Analysis - ASN Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082620021\">082620021</a>)"},
-                   {"name":"OILASN_DAEMON","config":"none","doc":"OIL Analysis - ASN Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082620021\">082620021</a>)"},
-                   {"name":"OILASN_MAIL","config":"none","doc":"OIL Analysis - ASN Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082620021\">082620021</a>)"},
-                   {"name":"OILBEACS","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILBSD","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILDA_DISP","config":"none","doc":"OIL Analysis DA <a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070330032\">070330032</a>"},
-                   {"name":"OILDC_DAEMON","config":"DB tables: <i>DC_STATUS</i>, <i>DC_SUBSCRIPTIONS</i>. Remove entry <i>DC_DAEMON</i> in table <i>DBCSERVICES</i>.<br>ubb config and server folders","doc":"OILAnalysis - Dynamic Caching (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=051180094\">051180094</a>)<br>FD - Dynamic Caching crash proof OILDC_DAEMON (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=080370024\">080370024</a>)"},
-                   {"name":"OILDEM","config":"none","doc":"OIL Analysis - Demigration Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=090070004\">090070004</a>)"},
-                   {"name":"OILDEM_DISP","config":"none","doc":"OIL Analysis - Demigration Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=090070004\">090070004</a>)"},
-                   {"name":"OILDES","config":"none","doc":"(<a target=\"_default\" href=\" \"></a>)"},
-                   {"name":"OILIDMS","config":"ubbconfig","doc":"OIL Analysis - IDMS (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=042670048\">042670048</a>)","interfaces":"OILIDMS_SERV"},
-                   {"name":"OILMIP","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILMON","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILMON_DAEMON","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILMONLIB","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILMRB","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILREPORT","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILKGB_DAEMON","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILLQP","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILLQPUP","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILOSP","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILSARA","config":"none - replaced by OILSARA_DAEMON during DEV phase.","doc":"P111032 - Ease SMS Analysis  Design_ver1.5 (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=130090004\">130090004</a>)"},
-                   {"name":"OILSKYNET","config":"ubbconfig","doc":"OIL Anamysis - Skynet (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=023470084\">023470084</a>)<br>"},
-                   {"name":"OILSKYNET_DISP","config":"ubbconfig","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILORBC","config":"ubbconfig","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILQCC","config":"DB tables: <i>qcc_queues</i>, <i>qcc_temp_storage</i>","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILEV_DISP","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILEV_DAEMON","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"},
-                   {"name":"OILVOUCHER","config":"ubb config: <i>OILVOUCHER</i>","doc":"<a target=\"_default\" href=\" \"></a>","interfaces":"HC6099, ucher, bgc.services.oil.voucher.v2."},
-                   {"name":"OILWBILOG","config":"none","doc":"<a target=\"_default\" href=\" \"></a>"}
-                   ]
+    "doc": [
+      "OIL FD - Voice over IP (052370034)",
+      "OIL FD - Dashboard (072980004)"
+    ],
+    "components": [
+      {
+        "name": "OIL_DYNAMIC_PARAMETERS",
+        "config": "DB tables: <i>mail_template_dyn_param</i> is empty.",
+        "doc": "",
+        "interfaces": "none"
+      },
+      {
+        "name": "OIL_SOA",
+        "config": "empty clearcase component - move to obsolete.",
+        "doc": "",
+        "interfaces": "none"
+      },
+      {
+        "name": "MAILING_TEMPLATE",
+        "config": "clearcase - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "none"
+      },
+      {
+        "name": "MAILING_TEMPLATES",
+        "config": "clearcase - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "none"
+      },
+      {
+        "name": "OIL",
+        "config": "empty clearcase component - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "none"
+      },
+      {
+        "name": "OILABR",
+        "config": "clearcase - move to obsolete, ubbconfig, DB table: clear entry BatchABR in <i>dbcservices</i>",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "Tuxedo: BatchABR, Files: ${FTPHOME}/OILABR/input"
+      },
+      {
+        "name": "OILASN",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - Skynet-OMS-ASN-TOM (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=032040055\">032040055</a>)<br>OIL Analysis - ASN Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082620021\">082620021</a>)",
+        "interfaces": "Tuxedo: BatchASN, refreshServices, WATCHDOG<br>Files: ${FTPHOME}/OILASN/input"
+      },
+      {
+        "name": "OILASN_DAEMON",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - ASN Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=082620021\">082620021</a>)"
+      },
+      {
+        "name": "OILASN_MAIL",
+        "config": "empty clearcase component - move to obsolete.",
+        "doc": "none"
+      },
+      {
+        "name": "OILBEACS",
+        "config": "clearcase - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "Tuxedo: 6101"
+      },
+      {
+        "name": "OILBOUNCE_DAEMON",
+        "config": "clearcase - move to obsolete, DB table: clear entry BOUNCE_DAEMON in <i>dbcservices</i>",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "Tuxedo: BOUNCE_DAEMON"
+      },
+      {
+        "name": "OILBSD",
+        "config": "clearcase - move to obsolete. Replaced by OILBST.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "none"
+      },
+      {
+        "name": "OILDA_DISP",
+        "config": "clearcase - move to obsolete, ubbconfig, DB tables: tbd.",
+        "doc": "OIL Analysis DA <a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=070330032\">070330032</a>",
+        "interfaces": "Tuxedo: DAQ_NOTIFY"
+      },
+      {
+        "name": "OILDC_DAEMON",
+        "config": "DB tables: <i>DC_STATUS</i>, <i>DC_SUBSCRIPTIONS</i>. Remove entry <i>DC_DAEMON</i> in table <i>DBCSERVICES</i>.<br>ubb config and server folders",
+        "doc": "OILAnalysis - Dynamic Caching (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=051180094\">051180094</a>)<br>FD - Dynamic Caching crash proof OILDC_DAEMON (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=080370024\">080370024</a>)",
+        "interfaces": "Tuxedo: DC_DAEMON"
+      },
+      {
+        "name": "OILDEM",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - Demigration Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=090070004\">090070004</a>)",
+        "interfaces": "Tuxedo: BatchDEM"
+      },
+      {
+        "name": "OILDEM_DISP",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - Demigration Phase Out (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=090070004\">090070004</a>)",
+        "interfaces": "Tuxedo: DEMQ_NOTIFY"
+      },
+      {
+        "name": "OILDES",
+        "config": "empty clearcase component - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "none"
+      },
+      {
+        "name": "OILIDMS",
+        "config": "clearcase - move to obsolete, ubbconfig",
+        "doc": "OIL Analysis - IDMS (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=042670048\">042670048</a>)",
+        "interfaces": "OILIDMS_SERV"
+      },
+      {
+        "name": "OILKGB_DAEMON",
+        "config": "clearcase - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\"\"></a>",
+        "interfaces": "KGB_DAEMON"
+      },
+      {
+        "name": "OILMIP",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILMON",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILMON_DAEMON",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILMONLIB",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILMRB",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILREPORT",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILKGB_DAEMON",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILLQP",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILLQPUP",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILOSP",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILSARA",
+        "config": "none - replaced by OILSARA_DAEMON during DEV phase.",
+        "doc": "P111032 - Ease SMS Analysis  Design_ver1.5 (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=130090004\">130090004</a>)",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILSKYNET",
+        "config": "ubbconfig",
+        "doc": "OIL Anamysis - Skynet (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=023470084\">023470084</a>)<br>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILSKYNET_DISP",
+        "config": "ubbconfig",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILORBC",
+        "config": "ubbconfig",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILQCC",
+        "config": "DB tables: <i>qcc_queues</i>, <i>qcc_temp_storage</i>",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILEV_DISP",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILEV_DAEMON",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILVOUCHER",
+        "config": "ubb config: <i>OILVOUCHER</i>",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      },
+      {
+        "name": "OILWBILOG",
+        "config": "none",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "tbc"
+      }
+    ]
   }
 }

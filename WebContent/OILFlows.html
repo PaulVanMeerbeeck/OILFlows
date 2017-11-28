@@ -2,13 +2,12 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<!--  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">  -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="css/OILFlows.css">
 <script type="text/javascript" src="js/OILFlows.js" ></script>
 <script type="text/javascript" src="js/OILFlowsData.js" ></script>
 <title>OILFlows</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <body onload="getData()">
 	 <h1 align="center">OIL - Documentation Summary Overview</h1>
@@ -20,7 +19,6 @@
   <input id="idFlowSearch" type="text" placeholder="Search..." onkeyup="flowSearch()">
 </div>
 <br>
-<div id="active" class="tabcontent">
 <div>
 <form name="selectTrackingDomain">
 <table style="width:100%">
@@ -35,6 +33,7 @@
 </form>
 <br>
 </div>
+<div id="active" class="tabcontent">
 <div style="overflow-x:auto;">
 <table class="oilflows" id="oilflows">
 	<tr>
@@ -69,10 +68,41 @@
 </form>
 </div>
 </div>
-<div style="overflow-x:auto;display:none" class="tabcontent" id="compobs">
+<div class="tabcontent" id="compobs" style="display:none">
+<div style="overflow-x:auto;">
 	<table class="oilflows" id="obsoletecomponents">
 		<tr>
-			<th>Clearcase Component</th><th>Configuration Item</th><th>Document References</th><th>Interfaces</th>
+			<th>Clearcase Component</th><th>Configuration Item</th><th>Document References</th><th>Interfaces</th><th>Update?</th>
+		</tr>
+	</table>
+</div>
+<br>
+<div>
+<form name="editFormComp" id="compEdit">
+	<h2 id="editFormCompsHeader">Edit Oil Component: </h2>
+	<label>Configuration items: </label><br><textarea rows="3" name="Config" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;" onchange="enableCompsButton()" placeholder="List where this component is configured ..."></textarea>
+	<br>
+	<label>Documents: </label><br><textarea rows="3" name="Documents" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;" onchange="enableCompsButton()" placeholder="List documents on this component ..."></textarea>
+	<br>
+	<label>Interfaces: </label><br><textarea rows="3" name="Interfaces" style="width:100%;border:0px;padding-top:8px;padding-bottom:8px;" onchange="enableCompsButton()" placeholder="List the interfaces, if any ..."></textarea>
+	<br>
+	<br>
+	<table style="width:100%">
+		<tr>
+			<td style="width:40%"></td>
+			<td style="width:10%;padding-right:12px;"><button id="saveComp" type="button" class="flowbutton" onclick="saveCompEdit()">Save</button></td>
+			<td style="width:10%;padding-left:12px;"><button id="cancelComp" type="button" class="flowbutton" onclick="cancelCompEdit()">Cancel</button></td>
+			<td style="width:40%"></td>
+		</tr>
+	</table>
+	<br> 
+</form>
+</div>
+</div>
+<div style="overflow-x:auto;display:none" class="tabcontent" id="docobs">
+	<table class="oilflows" id="obsoletedocuments">
+		<tr>
+			<th>Document name</th><th>Reference</th><th>Description</th>
 		</tr>
 	</table>
 </div>

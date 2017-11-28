@@ -56,23 +56,23 @@ p    {
     color: white;
 }
 
-#save {
+#save, #saveComp{
 	width:20;
 	align-content: left;
 }
 
-#cancel {
+#cancel, #cancelComp{
 	width:20;
 	align-content: center;
 }
 
-#flowEdit {
+#flowEdit, #compEdit{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	background-color: #ddd;
 	color:white;
 }
 
-#editFormHeader {
+#editFormHeader, #editFormCompsHeader{
 	background-color: #0099db;
 }
 
