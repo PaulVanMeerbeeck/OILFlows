@@ -589,8 +589,7 @@ function openFlow(evt, flowType)
 	{
 		document.editFormComp.style.display="none";
 		document.editForm.style.display="none";
-		document.getElementById("idFlowSearch").value="";
-		flowSearch();
+//		document.getElementById("idFlowSearch").value="";
 		activeTab = flowType;
 		var i, tabcontent, tablinks;
 		tabcontent = document.getElementsByClassName("tabcontent");
@@ -605,6 +604,7 @@ function openFlow(evt, flowType)
 		}
 		document.getElementById(flowType).style.display = "block";
 		evt.currentTarget.className += " active";
+		flowSearch();
 	}
 	catch(e)
 	{
