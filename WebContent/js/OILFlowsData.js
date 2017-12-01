@@ -671,7 +671,7 @@ OilFlows = {
       {
         "name": "OILMTC_DISP",
         "config": "clearcase - move to obsolete.",
-        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "doc": "OIL Analysis - MTC (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810020\">022810020</a>)",
         "interfaces": "Tuxedo: MTCQ_NOTIFY"
       },
       {
@@ -741,34 +741,64 @@ OilFlows = {
         "interfaces": "Tuxedo: SKYQ_NOTIFY"
       },
       {
-          "name": "OILSP",
-          "config": "clearcase - move to obsolete.",
-          "doc": "<a target=\"_default\" href=\"\"></a>",
-          "interfaces": "tbc"
-        },
-      {
-        "name": "OILEV_DISP",
-        "config": "clearcase<br>ubbconfig",
-        "doc": "<a target=\"_default\" href=\" \"></a>",
-        "interfaces": "Tuxedo: EVQ_NOTIFY"
+        "name": "OILSP",
+        "config": "empty clearcase component - move to obsolete.",
+        "doc": "P100020 - Multiservice Gateway Analysis & Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=110410005\">110410005</a>) stil mentions OILSP but this component is actually replaced by OILSP_DISP.<br>Notice that the feature with CatalogId 122231 that is subejct of this functionality is currently not used by the business.",
+        "interfaces": "none"
       },
       {
-        "name": "OILEV_DAEMON",
-        "config": "clearcase<br>ubbconfig",
+        "name": "OILTCC",
+        "config": "empty clearcase component - move to obsolete.",
         "doc": "<a target=\"_default\" href=\" \"></a>",
-        "interfaces": "Tuxedo: EV_DAEMON"
+        "interfaces": "none"
+      },
+      {
+        "name": "OILTOM",
+        "config": "clearcase component - move to obsolete,<br>ubbconfig,<br>DB table: clear entry BatchTOM in <i>dbcservices</i>",
+        "doc": "OIL Analysis - Skynet-OMS-ASN-TOM (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=032040055\">032040055</a>)",
+        "interfaces": "Files: ${FTPHOME}/OILTOM/input"
+      },
+      {
+        "name": "OILTOM_DAEMON",
+        "config": "clearcase component - move to obsolete,<br>ubbconfig,<br>DB tables: clear entry TOM_DAEMON in <i>dbcservices</i>,<br>remove table <i>caching_tom</i>",
+        "doc": "OIL Analysis - Skynet-OMS-ASN-TOM (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=032040055\">032040055</a>)",
+        "interfaces": "Files: ${FTPHOME}/OILTOM_DAEMON/output"
+      },
+      {
+        "name": "OILUTS_DISP",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL FD - Voice over IP Activation and repair (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=062280018\">062280018</a>)",
+        "interfaces": "Tuxedo: UTSQ_NOTIFY"
+      },
+      {
+        "name": "OILUTS_DAEMON",
+        "config": "clearcase - move to obsolete.<br>DB tables: remove table <i>uts_buffer</i>",
+        "doc": "OIL FD - Voice over IP Activation and repair (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=062280018\">062280018</a>)",
+        "interfaces": "Tuxedo:  UTS_DAEMON"
+      },
+      {
+        "name": "OILVOIP_DISP",
+        "config": "clearcase - move to obsolete.<br>ubb config: <i>OILVOIPDISP</i>",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "Tuxedo: VOIPQ_NOTIFY"
       },
       {
         "name": "OILVOUCHER",
-        "config": "ubb config: <i>OILVOUCHER</i>",
+        "config": "clearcase - move to obsolete<br>ubb config: <i>OILVOUCHER</i>",
         "doc": "<a target=\"_default\" href=\" \"></a>",
-        "interfaces": "tbc"
+        "interfaces": "Tuxedo: HC6099, ucher.\nAI: bgc.services.hub.hc9999.v1.1, bgc.services.oil.voucher.v2.0."
       },
       {
         "name": "OILWBILOG",
-        "config": "none",
+        "config": "clearcase - move to obsolete. Replaced by OILEXTLOG.",
         "doc": "<a target=\"_default\" href=\" \"></a>",
-        "interfaces": "tbc"
+        "interfaces": "Tuxedo: HC6082"
+      },
+      {
+        "name": "OILXYZ",
+        "config": "empty clearcase component - move to obsolete.",
+        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "interfaces": "none"
       }
     ]
   }
