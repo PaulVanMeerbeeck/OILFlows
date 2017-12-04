@@ -17,7 +17,7 @@ textarea, input {
 h1   {
 	color:#fff; 
 	background-color:#0099db; 
-	padding: 50px;
+	padding: 40px;
 }
 
 p    {
@@ -66,13 +66,13 @@ p    {
 	align-content: center;
 }
 
-#flowEdit, #compEdit{
+#flowEdit, #compEdit, #docEdit{
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	background-color: #ddd;
 	color:white;
 }
 
-#editFormHeader, #editFormCompsHeader{
+#editFormHeader, #editFormCompsHeader, #editFormDocsHeader{
 	background-color: #0099db;
 }
 

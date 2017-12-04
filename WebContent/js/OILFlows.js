@@ -37,10 +37,16 @@ function getData()
 		var browser = detectIE();
 		if(browser==false) isIE=false;
 		checkUpdateStatus();
+		if(!dataLocked)
+		{
+//			document.getElementById("newItemBttn").style.display="block";
+		}
 		document.editFormComp.style.display="none";
+		document.editFormDoc.style.display="none";
 		if(OilFlows != null && OilFlows.hasOwnProperty("obsolete"))
 		{
 			writeCompObs();
+			writeDocObs();
 		}
 		if(OilFlows != null && OilFlows.hasOwnProperty("flows"))
 		{
@@ -107,6 +113,51 @@ function writeCompObs()
 			if(dataLocked==false)
 			{
 				addCompButton(cell4, OilFlows.obsolete.components[j].name);
+			}
+		}
+	}
+}
+
+function writeDocObs()
+{
+	var table = document.getElementById("obsoletedocuments");
+	if(OilFlows.obsolete.hasOwnProperty("doc") )
+	{
+		while(table.rows.length>1)
+		{
+			table.deleteRow(-1);
+		}
+		if(dataLocked)
+		{
+			var hRow = table.rows[0];
+			if(hRow.cells.length>3) hRow.deleteCell(3);
+		}
+		for(var j=0; j<OilFlows.obsolete.doc.length; j++)
+		{
+			var row = table.insertRow();
+			var cell0 = row.insertCell(0);
+			var cell1 = row.insertCell(1);
+			var cell2 = row.insertCell(2);
+			var cell3;
+			if(dataLocked==false)
+			{
+				cell3 = row.insertCell(3);
+			}
+			if(OilFlows.obsolete.doc[j].hasOwnProperty("name"))
+			{
+				cell0.innerHTML=OilFlows.obsolete.doc[j].name;
+			}
+			if(OilFlows.obsolete.doc[j].hasOwnProperty("reference"))
+			{
+				cell1.innerHTML=OilFlows.obsolete.doc[j].reference;
+			}
+			if(OilFlows.obsolete.doc[j].hasOwnProperty("description"))
+			{
+				cell2.innerHTML=OilFlows.obsolete.doc[j].description;
+			}
+			if(dataLocked==false)
+			{
+				addDocButton(cell3, OilFlows.obsolete.doc[j].name);
 			}
 		}
 	}
@@ -185,6 +236,7 @@ function writeOilFlow()
 		{
 			writeElement(table,OilFlows.flows[i]);
 		}
+		setTableViewBySelector(table, document.getElementById("idFlowSearch").value);
 	}
 	catch(e)
 	{
@@ -308,6 +360,48 @@ function doCompEdit(id)
 	}
 }
 
+function doDocEdit(id) 
+{
+	for(var j=0; j<OilFlows.obsolete.doc.length; j++)
+	{
+		if(OilFlows.obsolete.doc[j].name==id)
+		{ 
+			editDocId=j;
+			setTableViewByIndex(document.getElementById("obsoletedocuments"),editDocId);
+			try
+			{
+				document.getElementById("editFormDocsHeader").innerHTML="Edit info on Oil Document: "+OilFlows.obsolete.doc[j].name;
+				document.editFormDoc.style.display="block";
+				if(OilFlows.obsolete.doc[j].hasOwnProperty("reference"))
+				{
+					document.editFormDoc.Reference.value=OilFlows.obsolete.doc[j].reference;
+				}
+				else
+				{
+					document.editFormDoc.Config.value="";
+				}
+				if(OilFlows.obsolete.doc[j].hasOwnProperty("description"))
+				{
+					document.editFormDoc.Description.value=OilFlows.obsolete.doc[j].description;
+				}
+				else
+				{
+					document.editFormDoc.Documents.value="";
+				}
+				var saveBttn = document.getElementById("saveDoc");
+				saveBttn.disabled=true;
+				saveBttn.style.backgroundColor="grey";
+				document.getElementById("cancelDoc").scrollIntoView();
+			}
+			catch(e)
+			{
+				alert("foutje in doDocEdit => "+e);
+			}
+			break;
+		}
+	}
+}
+
 function readOilFlows(evt) 
 {
 	var file = evt.target.files[0]; // FileList object
@@ -390,6 +484,19 @@ function saveCompEdit()
 	return true;
 }
 
+function saveDocEdit()
+{
+	document.editFormDoc.style.display="none";
+	OilFlows.obsolete.doc[editDocId].reference=document.editFormDoc.Reference.value;
+	OilFlows.obsolete.doc[editDocId].description=document.editFormDoc.Description.value;
+	writeDocObs();
+	flowSearch();
+	document.getElementById("saveFileBttn").style.display="block";
+	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
+	document.getElementById("saveFileBttn").disabled=false;
+	return true;
+}
+
 function cancelCompEdit()
 {
 	document.editFormComp.style.display="none";
@@ -397,6 +504,12 @@ function cancelCompEdit()
 	return true;
 }
 
+function cancelDocEdit()
+{
+	document.editFormDoc.style.display="none";
+	flowSearch();
+	return true;
+}
 
 function cancelEdit()
 {
@@ -459,6 +572,23 @@ function enableCompsButton()
 	catch(e)
 	{
 		alert("foutje in enableCompsButton "+e);
+	}
+}
+
+function enableDocsButton()
+{
+	try
+	{
+		var el=document.getElementById("saveDoc");
+		if(el.disabled)
+		{
+			el.disabled=false;
+			el.style.backgroundColor="#0099db";
+		}
+	}
+	catch(e)
+	{
+		alert("foutje in enableDocsButton "+e);
 	}
 }
 
@@ -531,6 +661,34 @@ function addCompButton(item, id)
 	catch(e)
 	{
 		alert("in addCompButton"+e);
+	}
+	return;
+}
+
+function addDocButton(item, id)
+{
+	try
+	{
+		var button = document.createElement("input");
+		button.type = "button";
+		button.id = id;
+		button.value = "Edit";
+		button.className = "flowbutton";
+		if(isIE)
+		{
+			button.setAttribute("onclick", "doDocEdit(id)");
+		}
+		else
+		{		
+			button.addEventListener("click", function() {
+				doDocEdit(id);
+			});
+		}
+		item.appendChild(button);
+	}
+	catch(e)
+	{
+		alert("in addDocButton"+e);
 	}
 	return;
 }
@@ -626,6 +784,11 @@ function flowSearch()
 			var theCompsTable = document.getElementById("obsoletecomponents");
 			setTableViewBySelector(theCompsTable, document.getElementById("idFlowSearch").value);
 		}
+		else if(activeTab=="docobs")
+		{
+			var theDocsTable = document.getElementById("obsoletedocuments");
+			setTableViewBySelector(theDocsTable, document.getElementById("idFlowSearch").value);
+		}
 	}
 	catch(e)
 	{
@@ -635,15 +798,23 @@ function flowSearch()
 
 function setTableViewBySelector(aTable, selector)
 {
+	var cntColumns=aTable.rows[0].cells.length;
 	for(var i=1; i< aTable.rows.length; i++)
 	{
-		if(aTable.rows[i].cells[0].innerHTML.toLowerCase().indexOf(selector.toLowerCase())!=-1 || selector=="")
+		aTable.rows[i].style.display = "none";
+		if(selector!="")
 		{
-			aTable.rows[i].style.display = "table-row";
+			for(var j=0; j<cntColumns; j++)
+			{
+				if(aTable.rows[i].cells[j].innerHTML.toLowerCase().indexOf(selector.toLowerCase())!=-1)
+				{
+					aTable.rows[i].style.display = "table-row";
+				}
+			}
 		}
 		else
 		{
-			aTable.rows[i].style.display = "none";				
+			aTable.rows[i].style.display = "table-row";
 		}
 	}
 }
@@ -661,4 +832,108 @@ function setTableViewByIndex(aTable, idx)
 			aTable.rows[i].style.display = "none";				
 		}
 	}
+}
+
+function newItem()
+{
+	try
+	{
+		if(activeTab=="active")
+		{
+			var theFlowTable = document.getElementById("oilflows");
+			appendActiveTable(theFlowTable);
+		}
+		else if(activeTab=="compobs")
+		{
+			var theCompsTable = document.getElementById("obsoletecomponents");
+			appendCompsTable(theFlowTable);
+		}
+		else if(activeTab=="docobs")
+		{
+			var theDocsTable = document.getElementById("obsoletedocuments");
+			appendDocsTable(theFlowTable);
+		}
+	}
+	catch(e)
+	{
+		alert("fout in flowSearch : " +e);
+	}
+}
+
+function appendActiveTable(aTable)
+{
+	var row = aTable.insertRow();
+	var cell0 = row.insertCell(0);
+	var cell1 = row.insertCell(1);
+	var cell2 = row.insertCell(2);
+	var cell3 = row.insertCell(3);
+	var cell4 = row.insertCell(4);
+	var cell5 = row.insertCell(5);
+	var cell6 = row.insertCell(6);
+	
+	newInputField(cell0);
+	newInputField(cell1);
+	newInputField(cell2);
+	newInputField(cell3);
+	newInputField(cell4);
+	newInputField(cell5);
+	
+	var button = document.createElement("input");
+	button.type = "button";
+	button.id = "newItem_active6";
+	button.value = "Save";
+	button.className = "flowbutton";
+	if(isIE)
+	{
+		button.setAttribute("onclick", "doNewActiveItem(row)");
+	}
+	else
+	{		
+		button.addEventListener("click", function() {
+			doNewActiveItem(row);
+		});
+	}
+	cell6.appendChild(button);
+	row.style.display = "table-row";
+	row.scrollIntoView();
+	
+}
+
+function appendCompsTable(aTable)
+{
+	alert("append comps table");
+}
+
+function appendDocsTable(aTable)
+{
+	alert("append docs table");
+}
+
+function doNewActiveItem(row)
+{
+	try
+	{
+		var obj = OilFlows.flows.flow[row.cells[0].firstElementChild.value];
+		if(obj)
+		{
+			alert(row.cells[0].firstElementChild.value+" already present!");
+		}
+		else
+		{
+			alert(row.cells[0].firstElementChild.value+" is new!");
+		}
+		
+	}
+	catch(e)
+	{
+		alert("error = "+e);
+	}
+}
+
+function newInputField(aCell)
+{
+	var nwField0 = document.createElement("input");
+	nwField0.type = "text";
+	nwField0.value = "";
+	aCell.appendChild(nwField0);
 }

@@ -496,8 +496,31 @@ OilFlows = {
   ],
   "obsolete": {
     "doc": [
-      "OIL FD - Voice over IP (052370034)",
-      "OIL FD - Dashboard (072980004)"
+      {
+        "name": "OIL FD - Voice over IP",
+        "reference": "<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=052620045\">052620045</a>",
+        "description": "This document describes the IMA flow. The document is last updated in 2006. "
+      },
+      {
+        "name": "OIL FD - Dashboard",
+        "reference": "<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=072980004\">072980004</a>",
+        "description": "This document describes some initial requirements for an OIL dashboard function. No such function is in use today. Document last updated in February 2018."
+      },
+      {
+        "name": "UC - Interface CNP - NPS",
+        "reference": "<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031080051\">031080051</a>",
+        "description": "The document descirbes the interface between CNP and NPS via HC6019."
+      },
+      {
+        "name": "OIL Analysis - CNP-NPS Interface",
+        "reference": "<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031250008\">031250008</a>",
+        "description": "The document descirbes the interface between CNP and NPS via HC6019."
+      },
+      {
+        "name": "OIL Analysis - OILBEACS",
+        "reference": "<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=081840004\">081840004</a>",
+        "description": "The document describes the specific development required for BEA to generate a cease order requests towards OMS-integration of BEA with OIL. The component OILBEACS is not used. Last document update in 2008."
+      }
     ],
     "components": [
       {
@@ -557,7 +580,7 @@ OilFlows = {
       {
         "name": "OILBEACS",
         "config": "clearcase - move to obsolete.",
-        "doc": "<a target=\"_default\" href=\" \"></a>",
+        "doc": "OIL Analysis - OILBEACS (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=081840004\">081840004</a>)",
         "interfaces": "Tuxedo: 6101"
       },
       {
@@ -571,6 +594,36 @@ OilFlows = {
         "config": "clearcase - move to obsolete. Replaced by OILBST.",
         "doc": "<a target=\"_default\" href=\" \"></a>",
         "interfaces": "none"
+      },
+      {
+        "name": "OILCNPN_DISP",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - CNP Notification Framework (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031290053\">031290053</a>)",
+        "interfaces": "Tuxedo: CNPNQ_NOTIFY"
+      },
+      {
+        "name": "OILCNPD",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - CNP donor (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810014\">022810014</a>)",
+        "interfaces": "Tuxedo: 6031 "
+      },
+      {
+        "name": "OILCNPD_DISP",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - CNP Notification Framework (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031290053\">031290053</a>)",
+        "interfaces": "Tuxedo: CNPDQ_NOTIFY"
+      },
+      {
+        "name": "OILCNPR",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - CNP recipient (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810015\">022810015</a>",
+        "interfaces": "Tuxedo: 6032"
+      },
+      {
+        "name": "OILCNPR_DISP",
+        "config": "clearcase - move to obsolete.",
+        "doc": "OIL Analysis - CNP Notification Framework (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=031290053\">031290053</a>)",
+        "interfaces": "Tuxedo: CNPRQ_NOTIFY"
       },
       {
         "name": "OILDA_DISP",
@@ -715,6 +768,12 @@ OilFlows = {
         "config": "clearcase - move to obsolete<br>ubbconfig<br>DB table: clear entry REPORT_DAEMON in <i>dbcservices</i><br>probably not used anymore.",
         "doc": "OIL FD - OIL Reporting (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=041910218\">041910218</a>)",
         "interfaces": "Tuxedo: REPORT_DAEMON"
+      },
+      {
+        "name": "OILROSY",
+        "config": "clearcase - move to obsolete<br>ubbconfig<br>probably not used anymore.",
+        "doc": "OIL Analysis - ROSY (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=050670102\">050670102</a>)",
+        "interfaces": "Tuxedo: 6080"
       },
       {
         "name": "OILSARA",
