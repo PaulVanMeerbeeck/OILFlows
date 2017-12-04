@@ -39,7 +39,7 @@ function getData()
 		checkUpdateStatus();
 		if(!dataLocked)
 		{
-//			document.getElementById("newItemBttn").style.display="block";
+			document.getElementById("newItemBttn").style.display="block";
 		}
 		document.editFormComp.style.display="none";
 		document.editFormDoc.style.display="none";
@@ -464,9 +464,7 @@ function saveEdit()
 	OilFlows.flows[editFlowId].info.Documents=document.editForm.Documents.value;
 	writeOilFlow();
 	flowSearch();
-	document.getElementById("saveFileBttn").style.display="block";
-	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
-	document.getElementById("saveFileBttn").disabled=false;
+	toggleFileSaveButton(true);
 	return true;
 }
 
@@ -478,9 +476,7 @@ function saveCompEdit()
 	OilFlows.obsolete.components[editCompId].interfaces=document.editFormComp.Interfaces.value;
 	writeCompObs();
 	flowSearch();
-	document.getElementById("saveFileBttn").style.display="block";
-	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
-	document.getElementById("saveFileBttn").disabled=false;
+	toggleFileSaveButton(true);
 	return true;
 }
 
@@ -491,9 +487,7 @@ function saveDocEdit()
 	OilFlows.obsolete.doc[editDocId].description=document.editFormDoc.Description.value;
 	writeDocObs();
 	flowSearch();
-	document.getElementById("saveFileBttn").style.display="block";
-	document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
-	document.getElementById("saveFileBttn").disabled=false;
+	toggleFileSaveButton(true);
 	return true;
 }
 
@@ -548,8 +542,7 @@ function saveFile()
 		};
 		var jsonContent="/**\n *\n */\nOilFlows = "+JSON.stringify(OilFlows,null,'  ');
 		download(jsonContent, theNameOfTheFile, 'text/json;encoding:utf-8');
-		document.getElementById("saveFileBttn").disabled=true;
-		document.getElementById("saveFileBttn").style.backgroundColor="lightgrey";
+		toggleFileSaveButton(false);
 	}
 	catch(e)
 	{
@@ -895,7 +888,8 @@ function appendActiveTable(aTable)
 	}
 	cell6.appendChild(button);
 	row.style.display = "table-row";
-	row.scrollIntoView();
+	setTableViewByIndex(aTable,aTable.rows.length-2);
+//	row.scrollIntoView();
 	
 }
 
@@ -913,16 +907,29 @@ function doNewActiveItem(row)
 {
 	try
 	{
-		var obj = OilFlows.flows.flow[row.cells[0].firstElementChild.value];
-		if(obj)
+		if(checkFlowName(row.cells[0].firstElementChild.value))
 		{
-			alert(row.cells[0].firstElementChild.value+" already present!");
+			alert(row.cells[0].firstElementChild.value+" is an existing flow");
+			return;
 		}
-		else
-		{
-			alert(row.cells[0].firstElementChild.value+" is new!");
-		}
-		
+		var newFlow = {flow:new String(row.cells[0].firstElementChild.value),
+				info: { Consumer:new String(row.cells[1].firstElementChild.value),
+						Interfaces:new String(row.cells[2].firstElementChild.value),
+						Component:new String(row.cells[3].firstElementChild.value),
+						ResponseFlow:new String(row.cells[4].firstElementChild.value),
+						Documents:new String(row.cells[5].firstElementChild.value)
+				}}; 
+		alert("new object "+newFlow.flow);
+		OilFlows.flows.push(newFlow);
+		OilFlows.flows.sort(function(a, b) {
+	        var x = a.flow.toLowerCase();
+	        var y = b.flow.toLowerCase();
+	        if (x < y) {return -1;}
+	        if (x > y) {return 1;}
+	        return 0;
+			});
+		writeOilFlow();
+		toggleFileSaveButton(true);
 	}
 	catch(e)
 	{
@@ -932,8 +939,33 @@ function doNewActiveItem(row)
 
 function newInputField(aCell)
 {
-	var nwField0 = document.createElement("input");
-	nwField0.type = "text";
-	nwField0.value = "";
-	aCell.appendChild(nwField0);
+	var aField = document.createElement("input");
+	aField.type = "text";
+	aField.value = "";
+	aField.className = "inputNewField";
+	aCell.appendChild(aField);
+}
+
+function checkFlowName(aName)
+{
+	for(var i=0; i < OilFlows.flows.length; i++) 
+	{
+		if(OilFlows.flows[i].flow==aName) return true;
+	}
+	return false;
+}
+
+function toggleFileSaveButton(onOff)
+{
+	if(onOff)
+	{
+		document.getElementById("saveFileBttn").style.display="block";
+		document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
+		document.getElementById("saveFileBttn").disabled=false;
+	}
+	else
+	{
+		document.getElementById("saveFileBttn").disabled=true;
+		document.getElementById("saveFileBttn").style.backgroundColor="lightgrey";
+	}
 }

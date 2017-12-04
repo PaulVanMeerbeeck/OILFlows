@@ -56,17 +56,17 @@ p    {
     color: white;
 }
 
-#save, #saveComp{
+#save, #saveComp {
 	width:20;
 	align-content: left;
 }
 
-#cancel, #cancelComp{
+#cancel, #cancelComp {
 	width:20;
 	align-content: center;
 }
 
-#flowEdit, #compEdit, #docEdit{
+#flowEdit, #compEdit, #docEdit {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
 	background-color: #ddd;
 	color:white;
@@ -108,7 +108,7 @@ div.tab button.active {
     background-color: #ccc;
 }
 
-div.tab input[type=text]{
+div.tab input[type=text] {
   float: right;
   padding: 6px;
   margin-top: 8px;
@@ -117,5 +117,6 @@ div.tab input[type=text]{
   font-size: 17px;
 }
 
-
-	
+.inputNewField {
+	width:100%;
+}
