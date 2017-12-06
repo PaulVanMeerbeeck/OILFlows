@@ -846,6 +846,7 @@ function newItem()
 			var theDocsTable = document.getElementById("obsoletedocuments");
 			appendDocsTable(theFlowTable);
 		}
+		toggleNewItemButton(false);
 	}
 	catch(e)
 	{
@@ -871,22 +872,40 @@ function appendActiveTable(aTable)
 	newInputField(cell4);
 	newInputField(cell5);
 	
-	var button = document.createElement("input");
-	button.type = "button";
-	button.id = "newItem_active6";
-	button.value = "Save";
-	button.className = "flowbutton";
+	var saveButton = document.createElement("input");
+	saveButton.type = "button";
+	saveButton.id = "newSaveItem_active6";
+	saveButton.value = "Save";
+//	saveButton.className = "flowbutton";
 	if(isIE)
 	{
-		button.setAttribute("onclick", "doNewActiveItem(row)");
+		saveButton.setAttribute("onclick", "doSaveNewActiveItem(row)");
 	}
 	else
 	{		
-		button.addEventListener("click", function() {
-			doNewActiveItem(row);
+		saveButton.addEventListener("click", function() {
+			doSaveNewActiveItem(row);
 		});
 	}
-	cell6.appendChild(button);
+	toggleButton(saveButton,true);
+	cell6.appendChild(saveButton);
+	var cancelButton = document.createElement("input");
+	cancelButton.type = "button";
+	cancelButton.id = "newCancelItem_active6";
+	cancelButton.value = "Cancel";
+//	cancelButton.className = "flowbutton";
+	if(isIE)
+	{
+		cancelButton.setAttribute("onclick", "doCancelNewActiveItem(row)");
+	}
+	else
+	{		
+		cancelButton.addEventListener("click", function() {
+			doCancelNewActiveItem(row);
+		});
+	}
+	toggleButton(cancelButton,true);
+	cell6.appendChild(cancelButton);
 	row.style.display = "table-row";
 	setTableViewByIndex(aTable,aTable.rows.length-2);
 //	row.scrollIntoView();
@@ -903,7 +922,7 @@ function appendDocsTable(aTable)
 	alert("append docs table");
 }
 
-function doNewActiveItem(row)
+function doSaveNewActiveItem(row)
 {
 	try
 	{
@@ -919,7 +938,6 @@ function doNewActiveItem(row)
 						ResponseFlow:new String(row.cells[4].firstElementChild.value),
 						Documents:new String(row.cells[5].firstElementChild.value)
 				}}; 
-		alert("new object "+newFlow.flow);
 		OilFlows.flows.push(newFlow);
 		OilFlows.flows.sort(function(a, b) {
 	        var x = a.flow.toLowerCase();
@@ -930,6 +948,26 @@ function doNewActiveItem(row)
 			});
 		writeOilFlow();
 		toggleFileSaveButton(true);
+	}
+	catch(e)
+	{
+		alert("error = "+e);
+	}
+}
+
+function doCancelNewActiveItem(row)
+{
+	try
+	{
+		OilFlows.flows.sort(function(a, b) {
+	        var x = a.flow.toLowerCase();
+	        var y = b.flow.toLowerCase();
+	        if (x < y) {return -1;}
+	        if (x > y) {return 1;}
+	        return 0;
+			});
+		writeOilFlow();
+		toggleNewItemButton(true);
 	}
 	catch(e)
 	{
@@ -957,15 +995,27 @@ function checkFlowName(aName)
 
 function toggleFileSaveButton(onOff)
 {
+	var theButton = document.getElementById("saveFileBttn");
+	toggleButton(theButton,onOff);
+}
+
+function toggleNewItemButton(onOff)
+{
+	var theButton = document.getElementById("newItemBttn");
+	toggleButton(theButton,onOff);
+}
+
+function toggleButton(aButton, onOff)
+{
 	if(onOff)
 	{
-		document.getElementById("saveFileBttn").style.display="block";
-		document.getElementById("saveFileBttn").style.backgroundColor="#0099db";
-		document.getElementById("saveFileBttn").disabled=false;
+		aButton.style.display="block";
+		aButton.style.backgroundColor="#0099db";
+		aButton.disabled=false;
 	}
 	else
 	{
-		document.getElementById("saveFileBttn").disabled=true;
-		document.getElementById("saveFileBttn").style.backgroundColor="lightgrey";
+		aButton.disabled=true;
+		aButton.style.backgroundColor="lightgrey";
 	}
 }
