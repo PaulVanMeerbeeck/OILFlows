@@ -738,6 +738,7 @@ function openFlow(evt, flowType)
 {
 	try
 	{
+		if(document.getElementById("idFlowSearch").disabled) return;
 		document.editFormComp.style.display="none";
 		document.editForm.style.display="none";
 //		document.getElementById("idFlowSearch").value="";
@@ -831,6 +832,7 @@ function newItem()
 {
 	try
 	{
+		document.getElementById("idFlowSearch").disabled=true;
 		if(activeTab=="active")
 		{
 			var theFlowTable = document.getElementById("oilflows");
@@ -856,7 +858,9 @@ function newItem()
 
 function appendActiveTable(aTable)
 {
+	alert("aTable.rows.length = "+aTable.rows.length);
 	var row = aTable.insertRow();
+	alert("aTable.rows.length = "+aTable.rows.length);
 	var cell0 = row.insertCell(0);
 	var cell1 = row.insertCell(1);
 	var cell2 = row.insertCell(2);
@@ -872,11 +876,16 @@ function appendActiveTable(aTable)
 	newInputField(cell4);
 	newInputField(cell5);
 	
+	cell0.firstChild.addEventListener("blur", function() {
+		checkNewFlowId(row);
+	});
+	
 	var saveButton = document.createElement("input");
 	saveButton.type = "button";
 	saveButton.id = "newSaveItem_active6";
 	saveButton.value = "Save";
-//	saveButton.className = "flowbutton";
+	saveButton.className = "flowbutton";
+	saveButton.style.width="50%";
 	if(isIE)
 	{
 		saveButton.setAttribute("onclick", "doSaveNewActiveItem(row)");
@@ -887,13 +896,16 @@ function appendActiveTable(aTable)
 			doSaveNewActiveItem(row);
 		});
 	}
-	toggleButton(saveButton,true);
+	toggleButton(saveButton,false);
+	saveButton.style.float="left";
 	cell6.appendChild(saveButton);
 	var cancelButton = document.createElement("input");
 	cancelButton.type = "button";
 	cancelButton.id = "newCancelItem_active6";
 	cancelButton.value = "Cancel";
-//	cancelButton.className = "flowbutton";
+	cancelButton.className = "flowbutton";
+	cancelButton.style.float="right";
+	cancelButton.style.width="50%";
 	if(isIE)
 	{
 		cancelButton.setAttribute("onclick", "doCancelNewActiveItem(row)");
@@ -948,6 +960,8 @@ function doSaveNewActiveItem(row)
 			});
 		writeOilFlow();
 		toggleFileSaveButton(true);
+		toggleNewItemButton(true);
+		document.getElementById("idFlowSearch").disabled=false;
 	}
 	catch(e)
 	{
@@ -968,6 +982,7 @@ function doCancelNewActiveItem(row)
 			});
 		writeOilFlow();
 		toggleNewItemButton(true);
+		document.getElementById("idFlowSearch").disabled=false;
 	}
 	catch(e)
 	{
@@ -988,7 +1003,7 @@ function checkFlowName(aName)
 {
 	for(var i=0; i < OilFlows.flows.length; i++) 
 	{
-		if(OilFlows.flows[i].flow==aName) return true;
+		if(OilFlows.flows[i].flow.toLowerCase()==aName.toLowerCase()) return true;
 	}
 	return false;
 }
@@ -1018,4 +1033,26 @@ function toggleButton(aButton, onOff)
 		aButton.disabled=true;
 		aButton.style.backgroundColor="lightgrey";
 	}
+}
+
+function checkNewFlowId(aRow)
+{
+	var val=aRow.cells[0].firstElementChild.value;
+	var bttn=aRow.cells[6].firstElementChild;
+	if(val=="")
+	{
+		toggleButton(bttn,false);
+		return;
+	}
+	if(checkFlowName(val))
+	{
+		alert(val+" is an existing flow");
+		toggleButton(bttn,false);
+		return;
+	}
+	else
+	{
+		toggleButton(bttn,true);
+	}
+
 }
