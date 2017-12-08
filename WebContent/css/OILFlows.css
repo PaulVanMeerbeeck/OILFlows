@@ -14,13 +14,14 @@ textarea, input {
 	font-size: 12px;
 }
 
-h1   {
+h1 {
+	margin: 0 0 0 0; 
 	color:#fff; 
 	background-color:#0099db; 
-	padding: 40px;
+	padding: 20px;
 }
 
-p    {
+p {
 	color:black;
 }
 
@@ -33,14 +34,14 @@ p    {
 
 .oilflows td, .oilflows th {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 8px;
 }
 	
 .oilflows tr:hover { background-color: #ddd; }
 
 .oilflows th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-align: left;
     background-color: #0099db;
     color: white;
