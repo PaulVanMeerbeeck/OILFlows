@@ -97,6 +97,16 @@ function flowSearch()
 			var theDocsTable = document.getElementById("obsoletedocuments");
 			setTableViewBySelector(theDocsTable, document.getElementById("idFlowSearch").value);
 		}
+		else if(activeTab=="oilpros")
+		{
+			var theOilProsTable = document.getElementById("oilprojects");
+			setTableViewBySelector(theOilProsTable, document.getElementById("idFlowSearch").value);
+		}
+		else if(activeTab=="nwspros")
+		{
+			var theNwsProsTable = document.getElementById("nwsprojects");
+			setTableViewBySelector(theNwsProsTable, document.getElementById("idFlowSearch").value);
+		}
 	}
 	catch(e)
 	{
@@ -121,6 +131,8 @@ function getData()
 		{
 			writeCompObs();
 			writeDocObs();
+			writeOilPros();
+			writeNwsPros();
 		}
 		if(OilFlows != null && OilFlows.hasOwnProperty("flows"))
 		{
@@ -171,6 +183,16 @@ function newItem()
 			var theDocsTable = document.getElementById("obsoletedocuments");
 			appendDocsTable(theDocsTable);
 		}
+		else if(activeTab=="oilpros")
+		{
+			var theOilProsTable = document.getElementById("oilprojects");
+			appendOilProsTable(theOilProsTable);
+		}
+		else if(activeTab=="nwspros")
+		{
+			var theNwsProsTable = document.getElementById("nwsprojects");
+			appendNwsProsTable(theNwsProsTable);
+		}
 		toggleNewItemButton(false);
 	}
 	catch(e)
@@ -184,6 +206,9 @@ function openFlow(evt, flowType)
 	try
 	{
 		if(document.getElementById("idFlowSearch").disabled) return;
+		document.editFormNwsPr.style.display="none";
+		document.editFormOilPr.style.display="none";
+		document.editFormDoc.style.display="none";
 		document.editFormComp.style.display="none";
 		document.editForm.style.display="none";
 //		document.getElementById("idFlowSearch").value="";

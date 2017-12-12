@@ -860,5 +860,67 @@ OilFlows = {
         "interfaces": "none"
       }
     ]
+  },
+  "projects": {
+    "OIL": [
+      {
+        "projectid": "1693001D03",
+        "name": "MTFB",
+        "release": "2017 CRC10",
+        "description": "",
+        "doc": ""
+      },
+      {
+        "projectid": "1573026D01",
+        "name": "M3 SE Hc6103 ",
+        "release": "2017 CRC06",
+        "description": "",
+        "doc": ""
+      }
+    ],
+    "NWS": [
+      {
+        "projectid": "1344005D05",
+        "name": "SCARLET - International Sports",
+        "release": "2018 CRC02",
+        "description": "Renaming of 11+ TV feature into International Sports.",
+        "doc": "1344005D05 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=172350003\\\">172350003</a>). OIL NWS - Proximus TV Product Issues V18.docx (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=173460005\\\">173460005</a>)"
+      },
+      {
+        "projectid": "1518026D01",
+        "name": "FTTH WBA and Carrier enhancement",
+        "release": "2018 CRC02",
+        "description": "Adding product feature ISLA to offers Carrier FTTH and FTTH WBA shared VLAN.",
+        "doc": "1518026D01- FTTH WBA and Carrier enhancement - OIL - detailed estimate _v0 Light. (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=173180001\\\">173180001</a>\") and other document in the project folder."
+      },
+      {
+        "projectid": "1581010D03",
+        "name": "FTTx fulfilment",
+        "release": "2018 CRC02",
+        "description": "3 new Order Rejections codes to be supported via existing flow and concepts of solution",
+        "doc": "1581010D03- OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=172580008\\\">172580008</a>\"). Reason_codes v57.xlsx (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=173460002\\\">173460002</a>\")"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "OLO United Telecom",
+        "release": "2017 Flex 09",
+        "description": "OLO \"United Telecom\" (CDBID = 9586236) takes over DSL installations from OLO \"DT Belgium\" (CDBID = 613588420). ",
+        "doc": "1518900E35 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171770002\\\">171770002</a>)"
+      },
+      {
+          "projectid": "1344005D04",
+          "name": " Ordering via TV at Scarlete",
+          "release": "2017 CRC08",
+          "description": "Support Decoder V5 in OIL reference data.",
+          "doc": "1344005D05 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171800002\\\">171800002</a>)"
+        },
+      {
+        "projectid": "1518900E35 ",
+        "name": "update OLO : Meritel DLM optout",
+        "release": "2017 Flex07",
+        "description": "update OLO Meritel in OIL DB Reference data.",
+        "doc": "1518900E35 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171370010\\\">171370010</a>)"
+      }
+    ]
   }
 }
