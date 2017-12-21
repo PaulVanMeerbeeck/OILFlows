@@ -880,13 +880,6 @@ OilFlows = {
     ],
     "NWS": [
       {
-        "projectid": "1344005D05",
-        "name": "SCARLET - International Sports",
-        "release": "2018 CRC02",
-        "description": "Renaming of 11+ TV feature into International Sports.",
-        "doc": "1344005D05 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=172350003\\\">172350003</a>). OIL NWS - Proximus TV Product Issues V18.docx (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=173460005\\\">173460005</a>)"
-      },
-      {
         "projectid": "1518026D01",
         "name": "FTTH WBA and Carrier enhancement",
         "release": "2018 CRC02",
@@ -901,6 +894,13 @@ OilFlows = {
         "doc": "1581010D03- OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=172580008\\\">172580008</a>\"). Reason_codes v57.xlsx (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=173460002\\\">173460002</a>\")"
       },
       {
+        "projectid": "1344005D05",
+        "name": "SCARLET - International Sports",
+        "release": "2018 CRC02",
+        "description": "Renaming of 11+ TV feature into International Sports.",
+        "doc": "1344005D05 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=172350003\\\">172350003</a>). OIL NWS - Proximus TV Product Issues V18.docx (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=173460005\\\">173460005</a>)"
+      },
+      {
         "projectid": "1518900E35",
         "name": "OLO United Telecom",
         "release": "2017 Flex 09",
@@ -908,18 +908,865 @@ OilFlows = {
         "doc": "1518900E35 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171770002\\\">171770002</a>)"
       },
       {
-          "projectid": "1344005D04",
-          "name": " Ordering via TV at Scarlete",
-          "release": "2017 CRC08",
-          "description": "Support Decoder V5 in OIL reference data.",
-          "doc": "1344005D05 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171800002\\\">171800002</a>)"
-        },
+        "projectid": "1344005D04",
+        "name": " Ordering via TV at Scarlete",
+        "release": "2017 CRC08",
+        "description": "Support Decoder V5 in OIL reference data.",
+        "doc": "1344005D05 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171800002\\\">171800002</a>)"
+      },
       {
         "projectid": "1518900E35 ",
         "name": "update OLO : Meritel DLM optout",
         "release": "2017 Flex07",
         "description": "update OLO Meritel in OIL DB Reference data.",
         "doc": "1518900E35 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=171370010\\\">171370010</a>)"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "OLO Error text update",
+        "release": "2017 CRC06",
+        "description": "OLO Error text update",
+        "doc": "1518900E35 - OIL - detailed estimate (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=170690010\\\">170690010</a>)<br>Reason_codes v56C.xls (<a target=\\\"_default\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=170690009\\\">170690009</a>)"
+      },
+      {
+        "projectid": "1581001D16",
+        "name": "FTTH CWS",
+        "release": "2017 CRC06",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1562001D02",
+        "name": "Proximus TV Revamp for OLO",
+        "release": "2017 CRC02",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "New OLO Meritel",
+        "release": "2017 CRC02",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1344005D04",
+        "name": " Ordering via TV at Scarlet",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "Scarlet name changes",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E38",
+        "name": "New Carrier VDSL2 Profile (VDSL2 Wholesale Start) and 1100001D08 - FTTH CWS",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "Scarlet name changes",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1579004D01",
+        "name": "OLO Error Message.",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "CR01 MOBISTAR Orange BASE Telenet",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E35",
+        "name": "New OLO_DT_BELGIUM",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1100001D04 CR01",
+        "name": "Offer Carrier FTTH update",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1100001D04",
+        "name": "FTTH Carrier new offer & FTTH WBA Shared VLAN update",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E22",
+        "name": "Update of OLO ref data in table NWS_ISP",
+        "release": "2015 CRC12",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518016D01",
+        "name": "MOBISTAR-MES MIGRATION",
+        "release": "2015 CRC09",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E22",
+        "name": "CR01 - BILLI VLAN",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P09007313",
+        "name": "FTTH WBA Enhancements",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1535001D11",
+        "name": "INCEPTION PH3",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E24",
+        "name": "Allow TV-feature changes",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E22",
+        "name": "OLO BILLI",
+        "release": "2015 CRC04",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518016D01",
+        "name": "MES MOBISTAR MERGE",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E22",
+        "name": "New OLO FAVCO",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1570900E18",
+        "name": "VP VC LT by OLO",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P09007311",
+        "name": "FTTH CWS",
+        "release": "2015 CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P09007308",
+        "name": "FTTH CWS WBA SHARED VLAN",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1518900E08",
+        "name": "OLO Requests",
+        "release": "2014 CRC11",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P13103902",
+        "name": "IPv6 Prof Internet",
+        "release": "2014 CRC11",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1562001D01",
+        "name": "FOOT OFFER FOR SCARLET",
+        "release": "2014 CRC11",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1535001D01",
+        "name": "INCEPTION - Part2",
+        "release": "2014 CRC07?",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1562001D01",
+        "name": "FOOT OFFER FOR SCARLET",
+        "release": "CRC07 release",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1570900E10",
+        "name": "Install Partner ESAS",
+        "release": "2014 CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P13103801",
+        "name": "SYMMETRICAL VDSL2 LP",
+        "release": "2014 CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "1344002D02",
+        "name": "BRAHMA",
+        "release": "2014 CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P13103801",
+        "name": "SYM VDSL2 LP - SC001",
+        "release": "2014 CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P12107201",
+        "name": "Error Code updates",
+        "release": "2013 CRC10",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P12107201",
+        "name": "ADSL from ROP",
+        "release": "2013 CRC10?",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P11111702",
+        "name": "Laika (New OLO error codes added (417-421)",
+        "release": "2013 CRC10",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P11108701",
+        "name": "Enable DLM optout",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P13106401",
+        "name": "BGC TV LIGHT FOR SCARLET",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P121054",
+        "name": "Reject codes updation",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111087",
+        "name": "Multicast for OLO's + P111117 Remove CR1",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111117",
+        "name": "XML Remapping",
+        "release": " CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E122256",
+        "name": "Blocking orders BROBAoATM",
+        "release": "2013 CRC03",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111117 - SC02",
+        "name": "XML Remapping scope change and IF4797 (P100054 - Set DLM_OPT_OUT for EVONET to N)",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111117",
+        "name": "XML Remapping - OCT12",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P121052",
+        "name": "Belgacom 11+",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112007",
+        "name": "Change BGCIN20_Only flag to Y for all env. P090075I - BGCOUT15",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P100053B",
+        "name": "ISDN over IP - Phase 3: Ref Data update",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111043",
+        "name": "XML PARSING ERROR NOT PASSED TO AHS",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111117",
+        "name": "XML Remapping",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111139",
+        "name": "Multiplay Portfolio Revamp",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112006",
+        "name": "New OLO Ulysse Group",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112466",
+        "name": "IF2029 - INTAKE 3500 - MOBISTAR 1 NEW ADSL2+ LP",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111152",
+        "name": "MTS2 Migration",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111119",
+        "name": "OMS-NPS HL Efficiency Phase II",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112385",
+        "name": "E122006",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111053",
+        "name": "VDSL 10Mbps Upstream",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P100054",
+        "name": "Up to General DLM Opt out for OLO",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111067",
+        "name": "E-ORDER FORMS RE-ENGINEERING",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111107",
+        "name": "Assignment Rules ADSL2 ComfortStart - CWS - Included Belgacom TV items",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111107",
+        "name": "Assignment Rules ADSL2 ComfortStart - CWS",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112023",
+        "name": "OLO ZapFI/ISP Lycamobile Belgium",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111032",
+        "name": "Broba ADSL2 LP577 & LP579",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112023",
+        "name": "OLO KPN Eurorings",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111032",
+        "name": "Ease SMS",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112023",
+        "name": "VLAN Profiles for Mobistar",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P111032",
+        "name": "VLAN Profile update for UAT/ITT",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112007",
+        "name": "REVUT & IM2618342",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112007",
+        "name": "ISLA for Carrier DSL",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090096",
+        "name": "Upload of the rejection codes version 31",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E112023",
+        "name": "add VLAN products",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100124",
+        "name": "New OLOs + Data Quality Check",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P100027",
+        "name": "Multiple Shared VLAN per QoS",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090096",
+        "name": "Certified Technician",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P100124",
+        "name": "ConsolidatedTestCases updates",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P100124",
+        "name": "Telenet & Belcenter VLANProfiles",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100124",
+        "name": "New OLOs Scarlet Belgium and Belcenter",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P759282B SC01",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100348",
+        "name": "New Line Profiles LP582, LP583, LP584",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090048B",
+        "name": "Broba over Ethernet Dedicated VLAN",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100250",
+        "name": "OLO Legacy",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100124",
+        "name": "New OLO Belcenter",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100031",
+        "name": "Add IDTV My Club KSK Lierse & KAS Eupen ref data (3.20.4 update)",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090066",
+        "name": "New Telenet OLO ID",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100031",
+        "name": "Add IDTV My Club KSK Lierse & KAS Eupen ref data",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P759282",
+        "name": "ISLA provisioning",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090141",
+        "name": "SCARLET DIY",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P759282",
+        "name": "Open Calendar",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090066",
+        "name": "New OLO Sysnetsud",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E100095",
+        "name": "Play Off Pass",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090155",
+        "name": "Internet Renaming",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090366",
+        "name": "SLA on carrier DSL",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090027C",
+        "name": "Req.5 (new dtd BGCIN19) & Req.9 (Add OLO_SHORT_NAME to table NWS_OLO_TYPE)",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090027B",
+        "name": "Change DB Switch functionality for BGCIN18 also",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P070029B",
+        "name": "Change DB Switch functionality & EDPNet MMT_SUPPORT update",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090034B",
+        "name": "Bitstream VDSL2 Dedicated VLAN",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090048",
+        "name": "Broba over Ethernet for dedicated VLAN",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090064 test cases updates & QCT6373",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090064  Incoming xml with SNA NOT ALLOWED (+ delivery of 3.6.4/5/6/7)",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090260[QCT1942]",
+        "name": "BGCIN13 and BGCIN14 WoV Check",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090251",
+        "name": "Reject orders with SRD on bank holidays",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090191",
+        "name": "Order Brandname visible for the technician",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090027B",
+        "name": "Change DB Switch functionality for BGCIN18 also",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090027B",
+        "name": "TV Reselling Phase 2",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090112",
+        "name": "new OLO EDPNET + LP576-LP581 testcases",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090066",
+        "name": "New Bus.Pack OLO offers",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "Set UCR915 Switch to ON in env files.",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "ENH_CWS_OMG  NWS Amend Due Date",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P090022",
+        "name": "VOIP For Operators - NWS CPE Enhancements",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "E090034",
+        "name": "Full Install with CPE for WS Mass Market",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "Set UCR915 to ON as default.",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "OMS1C Phaseout",
+        "name": "After rollout",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P2007-00641.12.5",
+        "name": "change mapping of the BROBA Remark string",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P-2007-00617.2.AP1728",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P-2007-00617.2.33",
+        "name": "UCR915",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P-2008.0050.3.1",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P-2008-00050.3.1 Bitstream VDSL2 product",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P-2007-00653.1.6",
+        "name": "ADSL 2+ line Profiles (October Release)",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "Broba 2 ADSL 2+ Test",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "P-2007-00641.6.2 (UCR888 Amend-Features)",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
+      },
+      {
+        "projectid": "Broba 2 ADSL 2+",
+        "name": "",
+        "release": "",
+        "description": "",
+        "doc": "(<a target=\\\"_default\\\" href=\\\"\\\"></a>\")"
       }
     ]
   }

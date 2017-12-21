@@ -51,7 +51,7 @@ function writeNwsPros()
 			}
 			if(dataLocked==false)
 			{
-				addNwsPrButton(cell5, OilFlows.projects.NWS[j].projectid)
+				addNwsPrButton(cell5, j)
 			}
 		}
 	}
@@ -107,6 +107,7 @@ function appendNwsProsTable(aTable)
 	newInputField(cell2);
 	newInputField(cell3);
 	newInputField(cell4);
+	cell4.firstElementChild.value="(<a target=\\\"_default\\\" href=\\\"\\\"></a>)";
 	
 	cell0.firstChild.addEventListener("blur", function() {
 		checkNewNwsProsId(row);
@@ -158,7 +159,8 @@ function checkNwsProsName(prId)
 {
 	for(var i=0; i < OilFlows.projects.NWS.length; i++) 
 	{
-		if(OilFlows.projects.NWS[i].projectid.toLowerCase()==prId.toLowerCase()) return true;
+		// do not check for nws projects.
+		//		if(OilFlows.projects.NWS[i].projectid.toLowerCase()==prId.toLowerCase()) return true;
 	}
 	return false;
 }
@@ -280,44 +282,40 @@ function doNwsPrEdit(id)
 {
 	try
 	{
-		for(var j=0; j<OilFlows.projects.NWS.length; j++)
-		{
-			if(OilFlows.projects.NWS[j].projectid==id)
-			{ 
-				editCompId=j;
-				setTableViewByIndex(document.getElementById("nwsprojects"),editCompId);
-				document.getElementById("editFormNwsPrHeader").innerHTML="Edit NWS Project: "+OilFlows.projects.NWS[j].projectid;
-				document.editFormNwsPr.style.display="block";
-				if(OilFlows.projects.NWS[j].hasOwnProperty("name"))
-				{
-					document.editFormNwsPr.ProName.value=OilFlows.projects.NWS[j].name;
-				}
-				else
-				{
-					document.editFormNwsPr.ProName.value="";
-				}
-				if(OilFlows.projects.NWS[j].hasOwnProperty("release"))
-				{
-					document.editFormNwsPr.OilRelease.value=OilFlows.projects.NWS[j].release;
-				}
-				if(OilFlows.projects.NWS[j].hasOwnProperty("description"))
-				{
-					document.editFormNwsPr.Description.value=OilFlows.projects.NWS[j].description;
-				}
-				if(OilFlows.projects.NWS[j].hasOwnProperty("doc"))
-				{
-					document.editFormNwsPr.Documents.value=OilFlows.projects.NWS[j].doc;
-				}
-				else
-				{
-					document.editFormNwsPr.Documents.value="";
-				}
-				var saveBttn = document.getElementById("saveNwsPr");
-				saveBttn.disabled=true;
-				saveBttn.style.backgroundColor="grey";
-				document.getElementById("cancelNwsPr").scrollIntoView();
-				break;
+		if(id < OilFlows.projects.NWS.length)
+		{ 
+			editCompId=id;
+			setTableViewByIndex(document.getElementById("nwsprojects"),editCompId);
+			document.getElementById("editFormNwsPrHeader").innerHTML="Edit NWS Project: "+OilFlows.projects.NWS[id].projectid;
+			document.editFormNwsPr.style.display="block";
+			if(OilFlows.projects.NWS[id].hasOwnProperty("name"))
+			{
+				document.editFormNwsPr.ProName.value=OilFlows.projects.NWS[id].name;
 			}
+			else
+			{
+				document.editFormNwsPr.ProName.value="";
+			}
+			if(OilFlows.projects.NWS[id].hasOwnProperty("release"))
+			{
+				document.editFormNwsPr.OilRelease.value=OilFlows.projects.NWS[id].release;
+			}
+			if(OilFlows.projects.NWS[id].hasOwnProperty("description"))
+			{
+				document.editFormNwsPr.Description.value=OilFlows.projects.NWS[id].description;
+			}
+			if(OilFlows.projects.NWS[id].hasOwnProperty("doc"))
+			{
+				document.editFormNwsPr.Documents.value=OilFlows.projects.NWS[id].doc;
+			}
+			else
+			{
+				document.editFormNwsPr.Documents.value="";
+			}
+			var saveBttn = document.getElementById("saveNwsPr");
+			saveBttn.disabled=true;
+			saveBttn.style.backgroundColor="grey";
+			document.getElementById("cancelNwsPr").scrollIntoView();
 		}
 	}
 	catch(e)
