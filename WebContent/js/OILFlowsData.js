@@ -159,7 +159,7 @@ OilFlows = {
         "Consumer": "CPS Application?",
         "Interfaces": "HC6033",
         "Component": "OILCPS",
-        "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILCSP_DISP<br>OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6037)->DMS<br>OMS->OILNOTIF (HC6025)->OILBPM_DISP->OFA(RequestDataSynchronizeVoipConfiguration)",
+        "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILCPS_DISP<br>OMS->OILORDERNOTIF (HC6087)->ESB<br>OMS->OILNOTIF (HC6037)->DMS<br>OMS->OILNOTIF (HC6025)->OILBPM_DISP->OFA(RequestDataSynchronizeVoipConfiguration)",
         "Documents": "OIL Analysis - CPS (<a target=\\\"_blank\\\" href=\\\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=022810018\\\">022810018</a>)<br><br><br><br>"
       }
     },
@@ -300,7 +300,7 @@ OilFlows = {
         "Interfaces": "SubmitCustOrder<br> via ESB_DAEMON<br>bgc.services.oil.customerordering.v1",
         "Component": "OILPNI",
         "ResponseFlow": "OMS->OILNOTIF (HC6025)->OILPNI_DISP->ResponseDataSubmitCustomerOrdering<br>\nOMS->OILNOTIF (HC6025)->OILESB_DISP->ESB (CTG)<br>\nOMS->OILORDERNOTIF (HC6087)->ESB<br>",
-        "Documents": "1548013D01 - PPNA - OIL Analysis  Design (<a target=\"_default\" href=\"http://panagonweb.bgc-grp.net/opc/ats_getdoc.aspx?Library=DMS^A00072&ID=163130001\">163130001</a>)<br><br><br>"
+        "Documents": "1548013D01 - PPNA - OIL Analysis  Design (<a target=\"_default\" href=\"https://proximuscorp.sharepoint.com/:w:/r/sites/TSI1750083/PANAGON%20Migration/EAI%20DEV/OIL%20documentation/1548013D01%20-%20PPNA%20-%20OIL%20Analysis%20%20Design%20_163130001.docx?d=wbac3d372d6d8407b9f6ef56ca34b36cb&csf=1&e=7U0nVg\">163130001</a>)<br><br><br>"
       }
     },
     {
